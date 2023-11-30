@@ -14,6 +14,9 @@ class AppImages {
   static const String masterCard = '${path}master-card.png';
   static const String visaCard = '${path}visa-card.png';
   static const String success = '${path}success.png';
+  static const String pinLocation = '${path}pin-location.png';
+  static const String mapMarker = '${path}map-marker.png';
+  static const String mapMarkerIcon = '${path}map-marker-icon.png';
   static const String timeout = '${path}timeout.svg';
 
 }

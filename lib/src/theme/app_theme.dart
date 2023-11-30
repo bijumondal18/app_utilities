@@ -14,6 +14,7 @@ class AppTheme {
       cardColor: AppColors.white,
       primaryColor: AppColors.primary,
       hintColor: AppColors.darkGrey,
+      listTileTheme: const ListTileThemeData(horizontalTitleGap: 0),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
           elevation: Dimens.elevation5, backgroundColor: AppColors.primary),
       appBarTheme: AppBarTheme(
@@ -34,13 +35,18 @@ class AppTheme {
           foregroundColor: AppColors.black),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
           color: AppColors.lightGrey, circularTrackColor: AppColors.lightGrey),
-      checkboxTheme: const CheckboxThemeData(),
+      checkboxTheme: CheckboxThemeData(
+          shape: RoundedRectangleBorder(
+              borderRadius:
+                  BorderRadius.circular(Dimens.cardCornerRadius / 3))),
       scaffoldBackgroundColor: AppColors.scaffold,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       tabBarTheme: const TabBarTheme(
-        labelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: Dimens.headline6),
+        labelStyle:
+            TextStyle(fontWeight: FontWeight.w600, fontSize: Dimens.headline6),
         labelColor: AppColors.black,
-        unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: Dimens.headline6),
+        unselectedLabelStyle:
+            TextStyle(fontWeight: FontWeight.w600, fontSize: Dimens.headline6),
         indicatorSize: TabBarIndicatorSize.label,
         unselectedLabelColor: AppColors.grey,
         indicator: UnderlineTabIndicator(
@@ -107,8 +113,6 @@ class AppTheme {
   }
 
   static ThemeData get darkTheme {
-    return ThemeData(
-
-    );
+    return ThemeData();
   }
 }

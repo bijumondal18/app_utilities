@@ -8,16 +8,22 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  # This package is for multi language support on text widgets
+
   device_info_plus: ^9.1.0
   #  easy_localization: ^3.0.3
 
+  dio: ^5.3.3
   eva_icons_flutter: ^3.1.0
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.8
+  get: ^4.6.6
+  http: ^0.13.6
   intl: ^0.18.1
+  lottie: ^2.7.0
   package_info_plus: ^4.2.0
+  shared_preferences: ^2.2.2
+  country_picker: ^2.0.22
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +41,7 @@ flutter:
     - assets/fonts/
     - assets/map/
     - assets/translations/
+    - assets/animations/
 
   fonts:
     - family: EuclidCircular
@@ -57,3 +64,4 @@ flutter:
           weight: 600
         - asset: assets/fonts/EuclidCircularASemiBoldItalic.ttf
           weight: 600
+

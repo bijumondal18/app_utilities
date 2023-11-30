@@ -1,13 +1,16 @@
 import 'package:app_utilities/app_utilities.dart';
+import 'package:app_utilities/src/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
+
+import 'outlined_button.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   final String title;
   final String? subTitle;
   final String? positiveButtonLabel;
   final String? negativeButtonLabel;
-  final VoidCallback positiveButtonPressed;
-  final VoidCallback negativeButtonPressed;
+  final Function positiveButtonPressed;
+  final Function negativeButtonPressed;
 
   const CustomBottomSheet(
       {Key? key,
@@ -27,8 +30,8 @@ class CustomBottomSheet extends StatelessWidget {
         subTitle: subTitle ?? '',
         positiveButtonLabel: positiveButtonLabel ?? '',
         negativeButtonLabel: negativeButtonLabel ?? '',
-        positiveButtonPressed: positiveButtonPressed,
-        negativeButtonPressed: negativeButtonPressed);
+        positiveButtonPressed: positiveButtonPressed.call(),
+        negativeButtonPressed: negativeButtonPressed.call());
   }
 }
 
@@ -69,16 +72,14 @@ showCustomBottomSheetWithAction(
                 Row(
                   children: [
                     Expanded(
-                        child: AppComponent.primaryButton(
-                            context: context,
+                        child: PrimaryButton(
                             onPressed: positiveButtonPressed,
                             label: positiveButtonLabel ?? 'Yes')),
                     const SizedBox(
                       width: Dimens.kDefaultPadding,
                     ),
                     Expanded(
-                        child: AppComponent.outlinedButton(
-                            context: context,
+                        child: OutlineButton(
                             onPressed: negativeButtonPressed,
                             label: negativeButtonLabel ?? 'No')),
                   ],

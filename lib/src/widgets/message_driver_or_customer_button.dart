@@ -1,32 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../allride_utilities.dart';
 
-class CustomCard extends StatefulWidget {
-  final Widget child;
+class MessageDriverOrCustomerButton extends StatefulWidget {
+  final String label;
   final VoidCallback? onPressed;
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
-  final Color? backgroundColor;
   final Duration? duration;
   final double? width;
+  final FontWeight? fontWeight;
+  final double? fontSize;
+  final Color? labelColor;
 
-  const CustomCard({
+  const MessageDriverOrCustomerButton({
     super.key,
-    required this.child,
+    required this.label,
     this.onPressed,
     this.margin,
     this.padding,
-    this.backgroundColor,
     this.duration,
     this.width,
+    this.fontWeight,
+    this.fontSize,
+    this.labelColor,
   });
 
   @override
-  State<CustomCard> createState() => _CustomCardState();
+  State<MessageDriverOrCustomerButton> createState() =>
+      _MessageDriverOrCustomerButtonState();
 }
 
-class _CustomCardState extends State<CustomCard>
+class _MessageDriverOrCustomerButtonState
+    extends State<MessageDriverOrCustomerButton>
     with SingleTickerProviderStateMixin {
   AnimationController? _animationController;
   double? _scale;
@@ -71,22 +78,47 @@ class _CustomCardState extends State<CustomCard>
                 const EdgeInsets.symmetric(
                     horizontal: Dimens.kDefaultPadding, vertical: 4),
             decoration: BoxDecoration(
-                color: widget.backgroundColor ?? AppColors.white,
+                color: AppColors.lightGrey,
                 border: Border.all(width: 0.4, color: AppColors.border),
                 borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
-                      //offset:  Offset(4, 4),
                       blurRadius: Dimens.cardBlurRadius,
-                      color: widget.backgroundColor != null
-                          ? AppColors.white
-                          : AppColors.shadow),
-                  // BoxShadow(
-                  //     offset:  Offset(-4, -4),
-                  //     blurRadius: Dimens.cardBlurRadius,
-                  //     color: AppColors.shadow),
+                      color: AppColors.white),
                 ]),
-            child: widget.child,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  '${AppConstants.packagePath}${AppIcons.chat}',
+                  width: 20,
+                  height: 20,
+                  color: AppColors.subTitleText,
+                ),
+                const SizedBox(
+                  width: Dimens.kDefaultPadding / 2,
+                ),
+                Expanded(
+                  child: Text(
+                    widget.label,
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                        color: widget.labelColor ?? AppColors.subTitleText,
+                        fontSize: widget.fontSize ?? Dimens.headline6,
+                        fontWeight: widget.fontWeight ?? FontWeight.w500),
+                  ),
+                ),
+                const SizedBox(
+                  width: Dimens.kDefaultPadding,
+                ),
+                SvgPicture.asset(
+                  '${AppConstants.packagePath}${AppIcons.arrowIosForward}',
+                  width: 16,
+                  height: 16,
+                  color: AppColors.subTitleText,
+                ),
+
+              ],
+            ),
           )),
     );
   }

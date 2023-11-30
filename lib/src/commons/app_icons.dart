@@ -18,8 +18,12 @@ class AppIcons {
   static const String couponCode = '${path}coupon-code-icon.svg';
   static const String hamburger = '${path}hamburger-icon.svg';
   static const String call = '${path}call-icon.svg';
+  static const String chat = '${path}chat-icon.svg';
+  static const String car = '${path}car-icon.svg';
+  static const String card = '${path}card-icon.svg';
   static const String email = '${path}email-icon.svg';
   static const String creditCard = '${path}credit-card-icon.svg';
+  static const String creditCardEclipse = '${path}credit-card-eclipse-icon.svg';
   static const String send = '${path}send-icon.svg';
   static const String upload = '${path}upload-icon.svg';
   static const String bankAccount = '${path}bank-account-icon.svg';
@@ -27,6 +31,7 @@ class AppIcons {
   static const String navigation = '${path}navigation-icon.svg';
   static const String myEarning = '${path}my-earning-icon.svg';
   static const String pickupLocation = '${path}pickup-location-icon.svg';
+  static const String mapMarker = '${path}map-marker.svg';
   static const String dropLocation = '${path}drop-location-icon.svg';
   static const String addAttachment = '${path}add-attachment-icon.svg';
 }
