@@ -1,0 +1,32 @@
+class AppIcons {
+  static const String path = 'assets/icons/';
+
+  static const String checkmark = '${path}checkmark-icon.svg';
+  static const String arrowIosForward = '${path}arrow-ios-forward-icon.svg';
+  static const String arrowBack = '${path}arrow-back-icon.svg';
+  static const String arrowForward = '${path}arrow-forward-icon.svg';
+  static const String home = '${path}home-icon.svg';
+  static const String helpCenter = '${path}help-center-icon.svg';
+  static const String myTrip = '${path}my-trip-icon.svg';
+  static const String notification = '${path}notification-icon.svg';
+  static const String settings = '${path}setting-icon.svg';
+  static const String logout = '${path}logout-icon.svg';
+  static const String camera = '${path}camera-icon.svg';
+  static const String clock = '${path}clock-icon.svg';
+  static const String close = '${path}close-icon.svg';
+  static const String coupon = '${path}coupon-icon.svg';
+  static const String couponCode = '${path}coupon-code-icon.svg';
+  static const String hamburger = '${path}hamburger-icon.svg';
+  static const String call = '${path}call-icon.svg';
+  static const String email = '${path}email-icon.svg';
+  static const String creditCard = '${path}credit-card-icon.svg';
+  static const String send = '${path}send-icon.svg';
+  static const String upload = '${path}upload-icon.svg';
+  static const String bankAccount = '${path}bank-account-icon.svg';
+  static const String vehicle = '${path}vehicle-icon.svg';
+  static const String navigation = '${path}navigation-icon.svg';
+  static const String myEarning = '${path}my-earning-icon.svg';
+  static const String pickupLocation = '${path}pickup-location-icon.svg';
+  static const String dropLocation = '${path}drop-location-icon.svg';
+  static const String addAttachment = '${path}add-attachment-icon.svg';
+}
