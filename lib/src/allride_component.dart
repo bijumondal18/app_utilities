@@ -648,26 +648,26 @@ class AppComponent {
   This is the Floating Back Button Widget with icon on the center for all the allride applications
   */
 
-  static Widget floatingBackButton(
-      {required BuildContext context, String? iconPath}) {
-    return Container(
-      decoration: const BoxDecoration(
-          shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-                color: AppColors.shadow,
-                blurRadius: Dimens.cardBlurRadius,
-                spreadRadius: Dimens.cardSpreadRadius)
-          ],
-          color: AppColors.white),
-      child: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: SvgPicture.asset(
-              iconPath ?? '${AppConstants.packagePath}${AppIcons.arrowBack}')),
-    );
-  }
+  // static Widget floatingBackButton(
+  //     {required BuildContext context, String? iconPath}) {
+  //   return Container(
+  //     decoration: const BoxDecoration(
+  //         shape: BoxShape.circle,
+  //         boxShadow: [
+  //           BoxShadow(
+  //               color: AppColors.shadow,
+  //               blurRadius: Dimens.cardBlurRadius,
+  //               spreadRadius: Dimens.cardSpreadRadius)
+  //         ],
+  //         color: AppColors.white),
+  //     child: IconButton(
+  //         onPressed: () {
+  //           Navigator.pop(context);
+  //         },
+  //         icon: SvgPicture.asset(
+  //             iconPath ?? '${AppConstants.packagePath}${AppIcons.arrowBack}')),
+  //   );
+  // }
 
   /*
   This is the Add Attachment Widget with icon on the center for all the allride applications
@@ -1424,30 +1424,29 @@ class AppComponent {
   /*
   This is the Custom Floating Button for all the allride applications
   */
-  static Widget floatingButton(
-      {required VoidCallback onPressed,
-      required String iconPath,
-      double? width,
-      double? height}) {
-    return GestureDetector(
-      onTap: onPressed,
-      child: Container(
-        width: 56,
-        height: 56,
-        decoration: const BoxDecoration(
-            shape: BoxShape.circle, color: AppColors.primary),
-        child: Align(
-          alignment: Alignment.center,
-          child: SvgPicture.asset(
-            iconPath,
-            width: width ?? 25,
-            height: height ?? 25,
-          ),
-        ),
-      ),
+
+  static Widget floatingButton({
+    required BuildContext context,
+    String? iconPath,
+    Color? backgroundColor,
+    required VoidCallback onPressed,
+  }) {
+    return Container(
+      decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          boxShadow:  [
+            BoxShadow(
+                color: backgroundColor != AppColors.white ? AppColors.shadow: AppColors.black,
+                blurRadius: Dimens.cardBlurRadius,
+                spreadRadius: Dimens.cardSpreadRadius)
+          ],
+          color: backgroundColor ?? AppColors.white),
+      child: IconButton(
+          onPressed: onPressed,
+          icon: SvgPicture.asset(
+              iconPath ?? '${AppConstants.packagePath}${AppIcons.arrowBack}')),
     );
   }
-
   static Widget dragHandleForBottomSheet({required BuildContext context}) {
     return Align(
       alignment: Alignment.center,

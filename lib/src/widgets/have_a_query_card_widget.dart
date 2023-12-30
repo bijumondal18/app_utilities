@@ -2,7 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../allride_utilities.dart';
+import '../../app_utilities.dart';
 
 class HaveAQueryCardWidget extends StatefulWidget {
   final VoidCallback? onPressed;

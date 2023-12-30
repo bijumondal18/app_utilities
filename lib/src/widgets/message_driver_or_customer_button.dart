@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../allride_utilities.dart';
+import '../../app_utilities.dart';
 
 class MessageDriverOrCustomerButton extends StatefulWidget {
   final String label;

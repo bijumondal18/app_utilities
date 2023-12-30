@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 
-import '../allride_utilities.dart';
+import '../app_utilities.dart';
 
 class AppComponent {
   /// This is to translate any text widget into different language for all the allride applications

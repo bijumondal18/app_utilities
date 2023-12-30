@@ -2,7 +2,7 @@ import 'package:country_picker/country_picker.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
-import '../../allride_utilities.dart';
+import '../../app_utilities.dart';
 
 class PhoneTextField extends StatefulWidget {
   final TextEditingController countryCodeController;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../allride_utilities.dart';
+import '../../app_utilities.dart';
 
 class CustomCard extends StatefulWidget {
   final Widget child;
