@@ -7,6 +7,4 @@ class AppImages {
   static const String avatarPlaceholder = '${path}avatar-placeholder.png';
   static const String inviteChildImage = '${path}invite-child-image.png';
   static const String notificationDetailsScreenImage = '${path}notification-details-image.png';
-
-
 }
