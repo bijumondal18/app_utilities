@@ -27,7 +27,6 @@ export 'package:app_utilities/src/commons/app_animations.dart';
 
 /// Common Widgets
 export 'package:app_utilities/src/widgets/custom_appbar.dart';
-export 'package:app_utilities/src/widgets/have_a_query_card_widget.dart';
 export 'package:app_utilities/src/widgets/message_driver_or_customer_button.dart';
 export 'package:app_utilities/src/widgets/primary_button.dart';
 export 'package:app_utilities/src/widgets/secondary_button.dart';
