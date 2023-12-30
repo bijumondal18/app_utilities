@@ -850,78 +850,78 @@ class AppComponent {
   /*
   This is the Confirmation or Rejection Status Dialog for all the allride applications
   */
-  static void showStatusDialog({
-    required BuildContext context,
-    String? title,
-    String? imagePath,
-    String? subTitle,
-  }) {
-    // Configure alert dialog UI
-    AlertDialog alertDialog = AlertDialog(
-      insetPadding: const EdgeInsets.all(Dimens.kDefaultPadding * 1.3),
-      contentPadding: const EdgeInsets.all(Dimens.kDefaultPadding),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
-      ),
-      content: Container(
-        width: MediaQuery.of(context).size.width,
-        margin: const EdgeInsets.all(Dimens.kDefaultPadding),
-        decoration: const BoxDecoration(
-          color: AppColors.white,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(
-              height: Dimens.kDefaultPadding,
-            ),
-            Image.asset(
-              imagePath ?? AppImages.success,
-              width: 110,
-              height: 110,
-              fit: BoxFit.contain,
-            ),
-            const SizedBox(
-              height: Dimens.kDefaultPadding * 2,
-            ),
-            Text(
-              title ?? '',
-              textAlign: TextAlign.center,
-              textScaleFactor: 0.98,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline4!
-                  .copyWith(fontWeight: FontWeight.w500),
-            ),
-            subTitle != ''
-                ? const SizedBox(
-                    height: Dimens.kDefaultPadding,
-                  )
-                : const SizedBox(),
-            subTitle != ''
-                ? Text(
-                    subTitle ?? '',
-                    textAlign: TextAlign.center,
-                    textScaleFactor: 0.98,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(color: AppColors.subTitleText),
-                  )
-                : const SizedBox(),
-            const SizedBox(
-              height: Dimens.kDefaultPadding * 2,
-            ),
-          ],
-        ),
-      ),
-    );
-
-    // Show the dialog
-    showDialog(context: context, builder: (context) => alertDialog);
-  }
+  // static void showStatusDialog({
+  //   required BuildContext context,
+  //   String? title,
+  //   String? imagePath,
+  //   String? subTitle,
+  // }) {
+  //   // Configure alert dialog UI
+  //   AlertDialog alertDialog = AlertDialog(
+  //     insetPadding: const EdgeInsets.all(Dimens.kDefaultPadding * 1.3),
+  //     contentPadding: const EdgeInsets.all(Dimens.kDefaultPadding),
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
+  //     ),
+  //     content: Container(
+  //       width: MediaQuery.of(context).size.width,
+  //       margin: const EdgeInsets.all(Dimens.kDefaultPadding),
+  //       decoration: const BoxDecoration(
+  //         color: AppColors.white,
+  //       ),
+  //       child: Column(
+  //         mainAxisSize: MainAxisSize.min,
+  //         mainAxisAlignment: MainAxisAlignment.center,
+  //         crossAxisAlignment: CrossAxisAlignment.center,
+  //         children: [
+  //           const SizedBox(
+  //             height: Dimens.kDefaultPadding,
+  //           ),
+  //           Image.asset(
+  //             imagePath ?? AppImages.success,
+  //             width: 110,
+  //             height: 110,
+  //             fit: BoxFit.contain,
+  //           ),
+  //           const SizedBox(
+  //             height: Dimens.kDefaultPadding * 2,
+  //           ),
+  //           Text(
+  //             title ?? '',
+  //             textAlign: TextAlign.center,
+  //             textScaleFactor: 0.98,
+  //             style: Theme.of(context)
+  //                 .textTheme
+  //                 .headline4!
+  //                 .copyWith(fontWeight: FontWeight.w500),
+  //           ),
+  //           subTitle != ''
+  //               ? const SizedBox(
+  //                   height: Dimens.kDefaultPadding,
+  //                 )
+  //               : const SizedBox(),
+  //           subTitle != ''
+  //               ? Text(
+  //                   subTitle ?? '',
+  //                   textAlign: TextAlign.center,
+  //                   textScaleFactor: 0.98,
+  //                   style: Theme.of(context)
+  //                       .textTheme
+  //                       .bodyText1!
+  //                       .copyWith(color: AppColors.subTitleText),
+  //                 )
+  //               : const SizedBox(),
+  //           const SizedBox(
+  //             height: Dimens.kDefaultPadding * 2,
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  //
+  //   // Show the dialog
+  //   showDialog(context: context, builder: (context) => alertDialog);
+  // }
 
   /*
   This is the Alert Dialog with action buttons for all the allride applications
@@ -1457,81 +1457,6 @@ class AppComponent {
         decoration: BoxDecoration(
             color: AppColors.border,
             borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
-      ),
-    );
-  }
-
-  /*
-  This is the Have a Query Card for all the allride applications
-  */
-
-  static Widget haveAQueryCard(
-      {required BuildContext context, required VoidCallback onTap}) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(Dimens.kDefaultPadding),
-        decoration: BoxDecoration(
-            color: AppColors.lightGrey,
-            borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SvgPicture.asset(
-              '${AppConstants.packagePath}${AppImages.chatQuery}',
-              width: 70,
-            ),
-            const SizedBox(
-              width: Dimens.kDefaultPadding,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Have a query?',
-                    textScaleFactor: 0.98,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline5!
-                        .copyWith(fontWeight: FontWeight.w700),
-                  ),
-                  const SizedBox(
-                    height: Dimens.kDefaultPadding / 4,
-                  ),
-                  Text('Chat with us',
-                      textScaleFactor: 0.98,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(fontWeight: FontWeight.w400)),
-                ],
-              ),
-            ),
-            const SizedBox(
-              width: Dimens.kDefaultPadding,
-            ),
-            Container(
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppColors.white,
-                  boxShadow: [
-                    BoxShadow(
-                        offset: const Offset(0, 5),
-                        blurRadius: 5,
-                        spreadRadius: 3,
-                        color: AppColors.grey.withAlpha(30))
-                  ]),
-              child: const Icon(
-                EvaIcons.arrowForward,
-                color: AppColors.black,
-                size: Dimens.appBarIconSize * 1.2,
-              ),
-            )
-          ],
-        ),
       ),
     );
   }
