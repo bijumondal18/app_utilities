@@ -81,7 +81,7 @@ class _PrimaryButtonState extends State<PrimaryButton>
                 widget.padding ?? const EdgeInsets.all(Dimens.kDefaultPadding),
             margin: widget.margin ?? const EdgeInsets.symmetric(vertical: 4),
             decoration: BoxDecoration(
-              color: AppColors.black,
+              color: AppColors.primary,
               border: Border.all(width: 0.4, color: AppColors.border),
               borderRadius: BorderRadius.circular(
                   widget.cornerRadius ?? Dimens.cardCornerRadius),
