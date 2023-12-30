@@ -32,7 +32,7 @@ class AppTheme {
             fontFamily: FontFamily.euclidRegular,
             //    fontFamily: FontFamily.poppinsRegular
           ),
-          foregroundColor: AppColors.black),
+          foregroundColor: AppColors.white),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
           color: AppColors.lightGrey, circularTrackColor: AppColors.lightGrey),
       checkboxTheme: CheckboxThemeData(
