@@ -10,6 +10,7 @@ class CustomCard extends StatefulWidget {
   final Color? backgroundColor;
   final Duration? duration;
   final double? width;
+  final double? height;
 
   const CustomCard({
     super.key,
@@ -19,7 +20,7 @@ class CustomCard extends StatefulWidget {
     this.padding,
     this.backgroundColor,
     this.duration,
-    this.width,
+    this.width, this.height,
   });
 
   @override

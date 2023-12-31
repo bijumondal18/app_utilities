@@ -29,8 +29,7 @@ class AppTheme {
             color: AppColors.white,
             fontSize: Dimens.bodyText1,
             fontWeight: FontWeight.w500,
-            fontFamily: FontFamily.euclidRegular,
-            //    fontFamily: FontFamily.poppinsRegular
+            fontFamily: FontFamily.robotoSlabRegular,
           ),
           foregroundColor: AppColors.white),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
@@ -60,55 +59,45 @@ class AppTheme {
         headline1: TextStyle(
             color: AppColors.black,
             fontSize: Dimens.headline1,
-            // fontFamily: 'EuclidCircularABold',
             fontWeight: FontWeight.w900),
         headline2: TextStyle(
             color: AppColors.black,
             fontSize: Dimens.headline2,
-            //fontFamily: 'EuclidCircularASemiBold',
             fontWeight: FontWeight.w700),
         headline3: TextStyle(
             color: AppColors.black,
             fontSize: Dimens.headline3,
-            //fontFamily: 'EuclidCircularASemiBold',
             fontWeight: FontWeight.w700),
         headline4: TextStyle(
             color: AppColors.black,
             fontSize: Dimens.headline4,
-            //fontFamily: 'EuclidCircularASemiBold',
             fontWeight: FontWeight.w600),
         headline5: TextStyle(
             color: AppColors.black,
             fontSize: Dimens.headline5,
-            // fontFamily: 'EuclidCircularASemiBold',
             fontWeight: FontWeight.w600),
         headline6: TextStyle(
             color: AppColors.black,
             fontSize: Dimens.headline6,
-            // fontFamily: 'EuclidCircularAMedium',
             fontWeight: FontWeight.w500),
         bodyText1: TextStyle(
             color: AppColors.black,
             fontSize: Dimens.bodyText1,
-            // fontFamily: 'EuclidCircularARegular',
             fontWeight: FontWeight.w500),
         bodyText2: TextStyle(
             color: AppColors.darkGrey,
             fontSize: Dimens.bodyText2,
-            // fontFamily: 'EuclidCircularARegular',
             fontWeight: FontWeight.w400),
         caption: TextStyle(
             color: AppColors.darkGrey,
             fontSize: Dimens.caption,
-            //  fontFamily: 'EuclidCircularALight',
             fontWeight: FontWeight.w400),
         button: TextStyle(
             color: AppColors.white,
             fontSize: Dimens.button,
-            // fontFamily: 'EuclidCircularAMedium',
             fontWeight: FontWeight.w600),
       ),
-      fontFamily: '${AppConstants.packagePath}EuclidCircular',
+      fontFamily: '${AppConstants.packagePath}RobotoSlab',
     );
   }
 
