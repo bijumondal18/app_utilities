@@ -583,9 +583,11 @@ class AppComponent {
     required BuildContext context,
     required List<DropdownMenuItem<Object>>? items,
     required void Function(dynamic)? onChanged,
+    String? Function(Object?)? validator,
     String? hintText,
     String? labelText,
     String? errorText,
+    Object? value,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -593,67 +595,62 @@ class AppComponent {
       children: [
         labelText != ''
             ? Text(
-                labelText ?? '',
-                textScaleFactor: 0.98,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1!
-                    .copyWith(fontWeight: FontWeight.w400),
-              ) //tr() is for make this text multi lingual
+          labelText ?? '',
+          textScaleFactor: 0.98,
+          style: Theme.of(context)
+              .textTheme
+              .bodyText1!
+              .copyWith(fontWeight: FontWeight.w400),
+        ) //tr() is for make this text multi lingual
             : const SizedBox(),
         labelText != ''
             ? const SizedBox(
-                height: Dimens.kDefaultPadding / 2,
-              )
+          height: Dimens.kDefaultPadding / 2,
+        )
             : const SizedBox(),
         DropdownButtonFormField(
           isExpanded: true,
+          validator: validator,
           icon: const Icon(
             Icons.keyboard_arrow_down_rounded,
             color: AppColors.black,
           ),
           items: items,
-          // list
-          //     .map((item) => DropdownMenuItem(
-          //         value: item,
-          //         child: AppComponent.labelText(
-          //             context: context,
-          //             text: value.toString(),
-          //             fontWeight: FontWeight.w400)))
-          //     .toList(),
           onChanged: onChanged,
           decoration: InputDecoration(
-            fillColor: AppColors.lightGrey,
-            filled: true,
-            hintText: hintText,
-            contentPadding: const EdgeInsets.symmetric(
-                horizontal: Dimens.kDefaultPadding,
-                vertical: Dimens.kDefaultPadding * 1.1),
-            enabledBorder: OutlineInputBorder(
+              fillColor: AppColors.lightGrey,
+              filled: true,
+              hintText: hintText,
+              contentPadding: const EdgeInsets.symmetric(
+                  horizontal: Dimens.kDefaultPadding,
+                  vertical: Dimens.kDefaultPadding * 1.1),
+              enabledBorder: OutlineInputBorder(
+                  borderSide:
+                  const BorderSide(color: AppColors.border, width: 2),
+                  borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide:
+                  const BorderSide(color: AppColors.border, width: 2),
+                  borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
+                borderSide:
+                BorderSide(color: AppColors.red.withAlpha(50), width: 2),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
                 borderSide: const BorderSide(color: AppColors.border, width: 2),
-                borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
-            focusedBorder: OutlineInputBorder(
-                borderSide: const BorderSide(color: AppColors.border, width: 2),
-                borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
-            errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
-              borderSide:
-                  BorderSide(color: AppColors.red.withAlpha(50), width: 2),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
-              borderSide: const BorderSide(color: AppColors.border, width: 2),
-            ),
-            hintStyle: Theme.of(context)
-                .textTheme
-                .bodyText1!
-                .copyWith(color: AppColors.grey, fontWeight: FontWeight.w400),
-            labelStyle: Theme.of(context).textTheme.bodyText1,
-            errorStyle: Theme.of(context)
-                .textTheme
-                .bodyText2!
-                .copyWith(color: AppColors.red),
-          ),
+              ),
+              hintStyle: Theme.of(context)
+                  .textTheme
+                  .bodyText1!
+                  .copyWith(color: AppColors.grey, fontWeight: FontWeight.w400),
+              labelStyle: Theme.of(context).textTheme.bodyText1,
+              errorStyle: Theme.of(context)
+                  .textTheme
+                  .bodyText2!
+                  .copyWith(color: AppColors.red),
+              errorText: value.toString() == "" ? errorText : null),
         ),
       ],
     );
