@@ -29,7 +29,7 @@ class AppTheme {
             color: AppColors.white,
             fontSize: Dimens.bodyText1,
             fontWeight: FontWeight.w500,
-            fontFamily: FontFamily.robotoSlabRegular,
+            fontFamily: FontFamily.sourceSansProRegular,
           ),
           foregroundColor: AppColors.white),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
@@ -97,7 +97,7 @@ class AppTheme {
             fontSize: Dimens.button,
             fontWeight: FontWeight.w600),
       ),
-      fontFamily: '${AppConstants.packagePath}RobotoSlab',
+      fontFamily: '${AppConstants.packagePath}SourceSansPro',
     );
   }
 

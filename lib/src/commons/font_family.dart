@@ -17,4 +17,8 @@ class FontFamily {
   static String robotoSlabMedium = 'RobotoSlabMedium';
   static String robotoSlabSemiBold = 'RobotoSlabSemiBold';
   static String robotoSlabBold = 'RobotoSlabBold';
+
+  static String sourceSansProBold = 'SourceSansProBold';
+  static String sourceSansProLight = 'SourceSansProLight';
+  static String sourceSansProRegular = 'SourceSansProRegular';
 }

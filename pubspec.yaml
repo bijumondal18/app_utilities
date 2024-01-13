@@ -41,7 +41,6 @@ flutter:
     - assets/fonts/
     - assets/map/
     - assets/translations/
-    - assets/animations/
 
   fonts:
     - family: EuclidCircular
@@ -78,4 +77,12 @@ flutter:
         - asset: assets/fonts/RobotoSlabLight.ttf
           weight: 400
 
+    - family: SourceSansPro
+      fonts:
+        - asset: assets/fonts/SourceSansProBold.ttf
+          weight: 700
+        - asset: assets/fonts/SourceSansProRegular.ttf
+          weight: 500
+        - asset: assets/fonts/SourceSansProLight.ttf
+          weight: 400
 
