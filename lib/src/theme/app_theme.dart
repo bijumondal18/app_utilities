@@ -24,7 +24,7 @@ class AppTheme {
           ),
           backgroundColor: AppColors.white,
           elevation: 0,
-          centerTitle: true,
+          centerTitle: false,
           titleTextStyle: TextStyle(
             color: AppColors.black,
             fontSize: Dimens.bodyText1,
