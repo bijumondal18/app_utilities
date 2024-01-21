@@ -420,7 +420,7 @@ class AppComponent {
     required BuildContext context,
     required TextEditingController controller,
     String? hintText,
-    String? labelText,
+    String? labelText = '',
     String? errorText,
     VoidCallback? onTap,
     VoidCallback? suffixIconPressed,
@@ -444,19 +444,19 @@ class AppComponent {
       children: [
         labelText != ''
             ? Text(
-                labelText ?? '',
+                labelText!,
                 textScaleFactor: 0.98,
                 style: Theme.of(context)
                     .textTheme
                     .bodyText1!
                     .copyWith(fontWeight: FontWeight.w400),
               ) //tr() is for make this text multi lingual
-            : const SizedBox(),
+            : const SizedBox.shrink(),
         labelText != ''
             ? const SizedBox(
                 height: Dimens.kDefaultPadding / 2,
               )
-            : const SizedBox(),
+            : const SizedBox.shrink(),
         TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
           readOnly: readOnly!,
@@ -483,12 +483,12 @@ class AppComponent {
                           vertical: Dimens.kDefaultPadding * 1.3),
                   enabledBorder: OutlineInputBorder(
                       borderSide:
-                          const BorderSide(color: AppColors.border, width: 2),
+                          const BorderSide(color: AppColors.border, width: 1),
                       borderRadius:
                           BorderRadius.circular(Dimens.cardCornerRadius)),
                   focusedBorder: OutlineInputBorder(
                       borderSide:
-                          const BorderSide(color: AppColors.border, width: 2),
+                          const BorderSide(color: AppColors.border, width: 1),
                       borderRadius:
                           BorderRadius.circular(Dimens.cardCornerRadius)),
                   errorBorder: OutlineInputBorder(
