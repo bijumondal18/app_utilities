@@ -4,8 +4,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const primary = Color(0xFF7C73C0);
-  static const secondary = Color(0xFFFFA934);
+  static const primary = Color(0xFF4469E7);
+  static const secondary = Color(0xFFEA6C00);
   static const accent = Color(0xFF00897B);
   static const white = Color(0xFFFFFFFF);
   static const scaffold = Color(0xFFFFFFFF);
