@@ -48,7 +48,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 icon: SvgPicture.asset(
                   leadingIcon ??
                       '${AppConstants.packagePath}${AppIcons.arrowBack}',
-                  color: AppColors.white,
+                  color: AppColors.black,
                 ),
                 onPressed: leadingIconPressed ?? () => Navigator.pop(context),
               )
@@ -59,7 +59,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           style: Theme.of(context)
               .textTheme
               .headline5!
-              .copyWith(color: AppColors.white),
+              .copyWith(color: AppColors.black),
         ),
         bottom: PreferredSize(
             preferredSize: const Size.fromHeight(kTextTabBarHeight),
