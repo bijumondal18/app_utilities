@@ -6,7 +6,7 @@ class Dimens {
   static const double largeButtonHeight = 52.0;
   static const double smallButtonHeight = 36.0;
 
-  static const double cardCornerRadius = 10.0;
+  static const double cardCornerRadius = 16.0;
   static const double cardBlurRadius = 5.0;
   static const double cardSpreadRadius = 5.0;
 

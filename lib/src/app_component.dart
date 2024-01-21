@@ -482,20 +482,20 @@ class AppComponent {
                           horizontal: Dimens.kDefaultPadding,
                           vertical: Dimens.kDefaultPadding * 1.3),
                   enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(color: AppColors.border, width: 1),
+                      // borderSide:
+                      //     const BorderSide(color: AppColors.border, width: 1),
                       borderRadius:
                           BorderRadius.circular(Dimens.cardCornerRadius)),
                   focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(color: AppColors.border, width: 1),
+                      // borderSide:
+                      //     const BorderSide(color: AppColors.border, width: 1),
                       borderRadius:
                           BorderRadius.circular(Dimens.cardCornerRadius)),
                   errorBorder: OutlineInputBorder(
                     borderRadius:
                         BorderRadius.circular(Dimens.cardCornerRadius),
                     borderSide: BorderSide(
-                        color: AppColors.red.withAlpha(50), width: 2),
+                        color: AppColors.red.withAlpha(50), width: 1),
                   ),
                   border: OutlineInputBorder(
                     borderRadius:
