@@ -21,6 +21,7 @@ class AppPreference {
   static const String isRegistered = 'IS_REGISTERED';
   static const String isOtpVerified = 'IS_OTP_VERIFIED';
   static const String isFirstTimeAppLoaded = 'IS_FIRST_TIME_APP_LOADED';
+  static const String languageCode = 'LANGUAGE_CODE';
 
   ///
 

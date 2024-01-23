@@ -1,10 +1,10 @@
 import 'package:app_utilities/app_utilities.dart';
+import 'package:dotted_line/dotted_line.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
-
-import '../app_utilities.dart';
 
 class AppComponent {
   /// This is to translate any text widget into different language for all the allride applications
@@ -34,7 +34,7 @@ class AppComponent {
             color: textColor,
             fontWeight: fontWeight ?? FontWeight.w500,
           ),
-    ) //tr() is for make this text multi lingual
+    ).tr() //tr() is for make this text multi lingual
         ;
   }
 
@@ -58,7 +58,7 @@ class AppComponent {
           fontSize: fontSize,
           color: textColor,
           fontWeight: fontWeight ?? FontWeight.w500),
-    ) //tr() is for make this text multi lingual
+    ).tr() //tr() is for make this text multi lingual
         ;
   }
 
@@ -82,7 +82,7 @@ class AppComponent {
           fontSize: fontSize,
           color: textColor,
           fontWeight: fontWeight ?? FontWeight.w500),
-    ) //tr() is for make this text multi lingual
+    ).tr() //tr() is for make this text multi lingual
         ;
   }
 
@@ -106,7 +106,7 @@ class AppComponent {
           fontSize: fontSize,
           color: textColor ?? AppColors.subTitleText,
           fontWeight: fontWeight ?? FontWeight.w500),
-    ) //tr() is for make this text multi lingual
+    ).tr() //tr() is for make this text multi lingual
         ;
   }
 
@@ -130,7 +130,7 @@ class AppComponent {
           fontSize: fontSize,
           color: textColor,
           fontWeight: fontWeight ?? FontWeight.w500),
-    ) //tr() is for make this text multi lingual
+    ).tr() //tr() is for make this text multi lingual
         ;
   }
 
@@ -154,7 +154,7 @@ class AppComponent {
           fontSize: fontSize,
           color: textColor,
           fontWeight: fontWeight ?? FontWeight.w500),
-    ) //tr() is for make this text multi lingual
+    ).tr() //tr() is for make this text multi lingual
         ;
   }
 
@@ -178,7 +178,7 @@ class AppComponent {
           fontSize: fontSize,
           color: textColor,
           fontWeight: fontWeight ?? FontWeight.w500),
-    ) //tr() is for make this text multi lingual
+    ).tr() //tr() is for make this text multi lingual
         ;
   }
 
@@ -272,7 +272,7 @@ class AppComponent {
                       style: Theme.of(context).textTheme.button!.copyWith(
                           color: labelColor ?? AppColors.black,
                           fontWeight: fontWeight ?? FontWeight.w600),
-                    ),
+                    ).tr(),
                   ),
                   SvgPicture.asset(
                     iconPath ?? '',
@@ -288,7 +288,7 @@ class AppComponent {
                     .textTheme
                     .button!
                     .copyWith(color: labelColor ?? AppColors.black),
-              ) //tr() is for make this text multi lingual
+              ).tr() //tr() is for make this text multi lingual
         );
   }
 
@@ -371,7 +371,7 @@ class AppComponent {
               color: labelColor ?? AppColors.primary,
               fontSize: fontSize ?? Dimens.button,
               fontWeight: fontWeight ?? FontWeight.w500),
-        ) //tr() is for make this text multi lingual
+        ).tr() //tr() is for make this text multi lingual
         );
   }
 
@@ -407,7 +407,7 @@ class AppComponent {
                       fontWeight: fontWeight ?? FontWeight.w500,
                       fontSize: fontSize ?? Dimens.button,
                     ),
-              ) //tr() is for make this text multi lingual
+              ).tr() //tr() is for make this text multi lingual
               ),
         ],
       ),
@@ -433,6 +433,7 @@ class AppComponent {
     TextInputType? keyboardType,
     bool? obscureText = false,
     Widget? suffixIcon,
+    TextCapitalization? textCapitalization,
     EdgeInsetsGeometry? contentPadding,
     Widget? prefixIcon,
     String? Function(String?)? validator,
@@ -450,7 +451,7 @@ class AppComponent {
                     .textTheme
                     .bodyText1!
                     .copyWith(fontWeight: FontWeight.w400),
-              ) //tr() is for make this text multi lingual
+              ).tr() //tr() is for make this text multi lingual
             : const SizedBox(),
         labelText != ''
             ? const SizedBox(
@@ -459,6 +460,7 @@ class AppComponent {
             : const SizedBox(),
         TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
+          textCapitalization: textCapitalization ?? TextCapitalization.none,
           readOnly: readOnly!,
           validator: validator,
           obscureText: obscureText!,
@@ -505,7 +507,7 @@ class AppComponent {
                   ),
                   filled: true,
                   fillColor: AppColors.lightGrey,
-                  hintText: hintText,
+                  hintText: hintText?.tr(),
                   hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
                       color: AppColors.grey, fontWeight: FontWeight.w400),
                   labelStyle: Theme.of(context).textTheme.bodyText1,
@@ -513,6 +515,14 @@ class AppComponent {
                       .textTheme
                       .bodyText2!
                       .copyWith(color: AppColors.red),
+                  // error: controller.text == ""
+                  //     ? AppComponent.labelText(
+                  //         context: context,
+                  //         text: errorText.toString(),
+                  //         textColor: AppColors.red,
+                  //         fontWeight: FontWeight.w400,
+                  //         fontSize: Dimens.bodyText2)
+                  //     : const SizedBox.shrink(),
                   errorText: controller.text == "" ? errorText : null)
               : (isUnderline == true && isBorder == false)
                   ? InputDecoration(
@@ -536,7 +546,7 @@ class AppComponent {
                       border: const UnderlineInputBorder(
                           borderSide:
                               BorderSide(width: 1, color: AppColors.border)),
-                      hintText: hintText,
+                      hintText: hintText?.tr(),
                       hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
                           color: AppColors.grey, fontWeight: FontWeight.w400),
                       labelStyle: Theme.of(context).textTheme.bodyText1,
@@ -544,6 +554,14 @@ class AppComponent {
                           .textTheme
                           .bodyText2!
                           .copyWith(color: AppColors.red),
+                      // error: controller.text == ""
+                      //     ? AppComponent.labelText(
+                      //         context: context,
+                      //         text: errorText.toString(),
+                      //         textColor: AppColors.red,
+                      //         fontWeight: FontWeight.w400,
+                      //         fontSize: Dimens.bodyText2)
+                      //     : const SizedBox.shrink(),
                       errorText: controller.text == "" ? errorText : null)
                   : InputDecoration(
                       suffixIcon: suffixIcon,
@@ -562,15 +580,22 @@ class AppComponent {
                           borderSide: BorderSide.none),
                       border: const UnderlineInputBorder(
                           borderSide: BorderSide.none),
-                      hintText: hintText,
-                      hintStyle: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(
-                              color: AppColors.grey,
-                              fontWeight: FontWeight.w400),
+                      hintText: hintText?.tr(),
+                      hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
+                          color: AppColors.grey, fontWeight: FontWeight.w400),
                       labelStyle: Theme.of(context).textTheme.bodyText1,
-                      errorStyle: Theme.of(context).textTheme.bodyText2!.copyWith(color: AppColors.red),
+                      errorStyle: Theme.of(context)
+                          .textTheme
+                          .bodyText2!
+                          .copyWith(color: AppColors.red),
+                      // error: controller.text == ""
+                      //     ? AppComponent.labelText(
+                      //         context: context,
+                      //         text: errorText.toString(),
+                      //         textColor: AppColors.red,
+                      //         fontWeight: FontWeight.w400,
+                      //         fontSize: Dimens.bodyText2)
+                      //     : const SizedBox.shrink(),
                       errorText: controller.text == "" ? errorText : null),
         ),
       ],
@@ -583,9 +608,11 @@ class AppComponent {
     required BuildContext context,
     required List<DropdownMenuItem<Object>>? items,
     required void Function(dynamic)? onChanged,
+    String? Function(Object?)? validator,
     String? hintText,
     String? labelText,
     String? errorText,
+    Object? value,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -599,7 +626,7 @@ class AppComponent {
                     .textTheme
                     .bodyText1!
                     .copyWith(fontWeight: FontWeight.w400),
-              ) //tr() is for make this text multi lingual
+              ).tr() //tr() is for make this text multi lingual
             : const SizedBox(),
         labelText != ''
             ? const SizedBox(
@@ -608,52 +635,47 @@ class AppComponent {
             : const SizedBox(),
         DropdownButtonFormField(
           isExpanded: true,
+          validator: validator,
           icon: const Icon(
             Icons.keyboard_arrow_down_rounded,
             color: AppColors.black,
           ),
           items: items,
-          // list
-          //     .map((item) => DropdownMenuItem(
-          //         value: item,
-          //         child: AppComponent.labelText(
-          //             context: context,
-          //             text: value.toString(),
-          //             fontWeight: FontWeight.w400)))
-          //     .toList(),
           onChanged: onChanged,
           decoration: InputDecoration(
-            fillColor: AppColors.lightGrey,
-            filled: true,
-            hintText: hintText,
-            contentPadding: const EdgeInsets.symmetric(
-                horizontal: Dimens.kDefaultPadding,
-                vertical: Dimens.kDefaultPadding * 1.1),
-            enabledBorder: OutlineInputBorder(
+              fillColor: AppColors.lightGrey,
+              filled: true,
+              hintText: hintText?.tr(),
+              contentPadding: const EdgeInsets.symmetric(
+                  horizontal: Dimens.kDefaultPadding,
+                  vertical: Dimens.kDefaultPadding * 1.1),
+              enabledBorder: OutlineInputBorder(
+                  borderSide:
+                      const BorderSide(color: AppColors.border, width: 2),
+                  borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide:
+                      const BorderSide(color: AppColors.border, width: 2),
+                  borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
+                borderSide:
+                    BorderSide(color: AppColors.red.withAlpha(50), width: 2),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
                 borderSide: const BorderSide(color: AppColors.border, width: 2),
-                borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
-            focusedBorder: OutlineInputBorder(
-                borderSide: const BorderSide(color: AppColors.border, width: 2),
-                borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
-            errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
-              borderSide:
-                  BorderSide(color: AppColors.red.withAlpha(50), width: 2),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
-              borderSide: const BorderSide(color: AppColors.border, width: 2),
-            ),
-            hintStyle: Theme.of(context)
-                .textTheme
-                .bodyText1!
-                .copyWith(color: AppColors.grey, fontWeight: FontWeight.w400),
-            labelStyle: Theme.of(context).textTheme.bodyText1,
-            errorStyle: Theme.of(context)
-                .textTheme
-                .bodyText2!
-                .copyWith(color: AppColors.red),
-          ),
+              ),
+              hintStyle: Theme.of(context)
+                  .textTheme
+                  .bodyText1!
+                  .copyWith(color: AppColors.grey, fontWeight: FontWeight.w400),
+              labelStyle: Theme.of(context).textTheme.bodyText1,
+              errorStyle: Theme.of(context)
+                  .textTheme
+                  .bodyText2!
+                  .copyWith(color: AppColors.red),
+              errorText: value.toString().tr() == "" ? errorText?.tr() : null),
         ),
       ],
     );
@@ -695,7 +717,7 @@ class AppComponent {
                   vertical: Dimens.kDefaultPadding * 1.2),
               filled: true,
               fillColor: AppColors.lightGrey,
-              hintText: hintText,
+              hintText: hintText?.tr(),
               hintStyle: Theme.of(context)
                   .textTheme
                   .bodyText1!
@@ -730,22 +752,26 @@ class AppComponent {
 
   /// This is the Floating Back Button Widget with icon on the center for all the allride applications
 
-  static Widget floatingBackButton(
-      {required BuildContext context, String? iconPath}) {
+  static Widget floatingButton({
+    required BuildContext context,
+    String? iconPath,
+    Color? backgroundColor,
+    required VoidCallback onPressed,
+  }) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-                color: AppColors.shadow,
+                color: backgroundColor != AppColors.white
+                    ? AppColors.shadow
+                    : AppColors.black,
                 blurRadius: Dimens.cardBlurRadius,
                 spreadRadius: Dimens.cardSpreadRadius)
           ],
-          color: AppColors.white),
+          color: backgroundColor ?? AppColors.white),
       child: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: onPressed,
           icon: SvgPicture.asset(
               iconPath ?? '${AppConstants.packagePath}${AppIcons.arrowBack}')),
     );
@@ -874,22 +900,35 @@ class AppComponent {
       {required BuildContext context,
       required String status,
       required Color color,
+      bool hasIcon = false,
       Color? textColor}) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(
-              horizontal: Dimens.kDefaultPadding,
-              vertical: Dimens.kDefaultPadding / 3),
+          padding: const EdgeInsets.all(Dimens.kDefaultPadding / 3),
           decoration: BoxDecoration(
               color: color,
               borderRadius: BorderRadius.circular(Dimens.cardCornerRadius / 2)),
-          child: Text(
-            status,
-            style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                color: textColor ?? AppColors.white,
-                fontWeight: FontWeight.w500),
+          child: Row(
+            children: [
+              hasIcon == true
+                  ? const Icon(
+                      Icons.check,
+                      color: AppColors.white,
+                      size: Dimens.appBarIconSize / 1.2,
+                    )
+                  : const SizedBox.shrink(),
+              SizedBox(
+                width: hasIcon == true ? Dimens.kDefaultPadding / 4 : 0,
+              ),
+              Text(
+                status,
+                style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                    color: textColor ?? AppColors.white,
+                    fontWeight: FontWeight.w600),
+              ).tr(),
+            ],
           ),
         ),
       ],
@@ -917,7 +956,7 @@ class AppComponent {
                 .textTheme
                 .bodyText1!
                 .copyWith(color: foregroundColor ?? AppColors.white),
-          ),
+          ).tr(),
         ),
       );
   }
@@ -949,7 +988,7 @@ class AppComponent {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Lottie.asset(imagePath ?? AppAnimations.success,
-                width: 200,
+                width: 150,
                 // height: MediaQuery.of(context).size.width*0.7,
                 fit: BoxFit.cover,
                 repeat: false),
@@ -961,7 +1000,7 @@ class AppComponent {
                   .textTheme
                   .headline4!
                   .copyWith(fontWeight: FontWeight.w500),
-            ),
+            ).tr(),
             subTitle != ''
                 ? const SizedBox(
                     height: Dimens.kDefaultPadding,
@@ -976,7 +1015,7 @@ class AppComponent {
                         .textTheme
                         .bodyText1!
                         .copyWith(color: AppColors.subTitleText),
-                  )
+                  ).tr()
                 : const SizedBox(),
             const SizedBox(
               height: Dimens.kDefaultPadding,
@@ -1040,7 +1079,7 @@ class AppComponent {
               textAlign: TextAlign.center,
               textScaleFactor: 0.98,
               style: Theme.of(context).textTheme.headline4,
-            ),
+            ).tr(),
             subTitle != ''
                 ? const SizedBox(
                     height: Dimens.kDefaultPadding,
@@ -1052,7 +1091,7 @@ class AppComponent {
                     textAlign: TextAlign.center,
                     textScaleFactor: 0.98,
                     style: Theme.of(context).textTheme.bodyText1,
-                  )
+                  ).tr()
                 : const SizedBox(),
             // const SizedBox(
             //   height: Dimens.kDefaultPadding,
@@ -1076,7 +1115,7 @@ class AppComponent {
                         child: Text(
                           positiveButtonLabel ?? '',
                           textScaleFactor: 0.98,
-                        )),
+                        ).tr()),
                   ),
                   const SizedBox(
                     width: Dimens.kDefaultPadding * 1.5,
@@ -1098,7 +1137,7 @@ class AppComponent {
                         child: Text(
                           negativeButtonLabel ?? '',
                           textScaleFactor: 0.98,
-                        )),
+                        ).tr()),
                   )
                 ],
               ),
@@ -1144,7 +1183,7 @@ class AppComponent {
                 textScaleFactor: 0.98,
                 maxLines: 2,
                 style: Theme.of(context).textTheme.bodyText1,
-              ),
+              ).tr(),
             )
           ],
         ),
@@ -1197,7 +1236,7 @@ class AppComponent {
                 textScaleFactor: 0.98,
                 maxLines: 2,
                 style: Theme.of(context).textTheme.headline6!.copyWith(),
-              ),
+              ).tr(),
             ),
             const SizedBox(
               width: Dimens.kDefaultPadding,
@@ -1248,7 +1287,7 @@ class AppComponent {
               fontSize: fontSize,
               color: textColor,
               fontWeight: fontWeight ?? FontWeight.w500),
-        ),
+        ).tr(),
       ],
     ) //tr() is for make this text multi lingual
         ;
@@ -1281,7 +1320,7 @@ class AppComponent {
               textScaleFactor: 0.98,
               style: Theme.of(context).textTheme.bodyText1!.copyWith(
                   color: AppColors.white, fontWeight: FontWeight.w500),
-            ),
+            ).tr(),
             const SizedBox(
               height: 5.0,
             ),
@@ -1291,7 +1330,7 @@ class AppComponent {
               textScaleFactor: 0.98,
               style: Theme.of(context).textTheme.caption!.copyWith(
                   color: AppColors.white, fontWeight: FontWeight.w400),
-            ),
+            ).tr(),
           ],
         ),
       ),
@@ -1325,7 +1364,7 @@ class AppComponent {
               textScaleFactor: 0.98,
               style: Theme.of(context).textTheme.bodyText1!.copyWith(
                   color: AppColors.black, fontWeight: FontWeight.w500),
-            ),
+            ).tr(),
             const SizedBox(
               height: 5.0,
             ),
@@ -1335,7 +1374,7 @@ class AppComponent {
               textScaleFactor: 0.98,
               style: Theme.of(context).textTheme.caption!.copyWith(
                   color: AppColors.black, fontWeight: FontWeight.w400),
-            ),
+            ).tr(),
           ],
         ),
       ),
@@ -1358,15 +1397,20 @@ class AppComponent {
     return Stack(
       children: [
         Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SvgPicture.asset(
-                  '${AppConstants.packagePath}${AppIcons.pickupLocation}',
-                  width: 18,
-                  height: 18,
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: Dimens.kDefaultPadding / 4),
+                  child: SvgPicture.asset(
+                    '${AppConstants.packagePath}${AppIcons.pickupLocation}',
+                    width: 16,
+                    height: 16,
+                  ),
                 ),
                 const SizedBox(
                   width: Dimens.kDefaultPadding,
@@ -1378,23 +1422,22 @@ class AppComponent {
                     children: [
                       hasPickupDropLabel == true
                           ? Text(
-                              pickupLabel?.toUpperCase() ??
-                                  'Pickup'.toUpperCase(),
+                              pickupLabel ?? 'Pickup',
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyText2!
                                   .copyWith(color: AppColors.grey),
-                            )
-                          : const SizedBox(),
+                            ).tr()
+                          : const SizedBox.shrink(),
                       Text(
                         pickupLocation,
                         textScaleFactor: 0.98,
-                        maxLines: 1,
+                        maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontWeight: FontWeight.w500,
                             color: locationColor ?? AppColors.black),
-                      ),
+                      ).tr(),
                     ],
                   ),
                 ),
@@ -1402,13 +1445,14 @@ class AppComponent {
                   width: Dimens.kDefaultPadding,
                 ),
                 Text(pickupTime ?? '',
-                    textScaleFactor: 0.98,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(fontWeight: FontWeight.w400)),
+                        textScaleFactor: 0.98,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1!
+                            .copyWith(fontWeight: FontWeight.w400))
+                    .tr(),
               ],
             ),
             const SizedBox(
@@ -1418,10 +1462,14 @@ class AppComponent {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SvgPicture.asset(
-                  '${AppConstants.packagePath}${AppIcons.dropLocation}',
-                  width: 18,
-                  height: 18,
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: Dimens.kDefaultPadding / 4),
+                  child: SvgPicture.asset(
+                    '${AppConstants.packagePath}${AppIcons.dropLocation}',
+                    width: 18,
+                    height: 18,
+                  ),
                 ),
                 const SizedBox(
                   width: Dimens.kDefaultPadding,
@@ -1433,22 +1481,22 @@ class AppComponent {
                     children: [
                       hasPickupDropLabel == true
                           ? Text(
-                              dropLabel?.toUpperCase() ?? 'Drop'.toUpperCase(),
+                              dropLabel ?? 'Drop',
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyText2!
                                   .copyWith(color: AppColors.grey),
-                            )
-                          : const SizedBox(),
+                            ).tr()
+                          : const SizedBox.shrink(),
                       Text(
                         dropLocation,
                         textScaleFactor: 0.98,
-                        maxLines: 1,
+                        maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontWeight: FontWeight.w500,
                             color: locationColor ?? AppColors.black),
-                      ),
+                      ).tr(),
                     ],
                   ),
                 ),
@@ -1456,56 +1504,72 @@ class AppComponent {
                   width: Dimens.kDefaultPadding,
                 ),
                 Text(dropTime ?? '',
-                    textScaleFactor: 0.98,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(fontWeight: FontWeight.w400)),
+                        textScaleFactor: 0.98,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1!
+                            .copyWith(fontWeight: FontWeight.w400))
+                    .tr(),
               ],
             ),
           ],
         ),
         Positioned(
-            top: 18,
-            left: 7,
-            child: Container(
-              color: AppColors.subTitleText,
-              width: 2,
-              height: hasPickupDropLabel == true
+            top: 19,
+            left: 6.5,
+            child: DottedLine(
+              direction: Axis.vertical,
+              lineThickness: 2,
+              dashGapLength: Dimens.kDefaultPadding / 2,
+              dashLength: Dimens.kDefaultPadding / 2,
+              dashColor: AppColors.primary,
+              lineLength: hasPickupDropLabel == true
                   ? Dimens.kDefaultPadding * 3
                   : Dimens.kDefaultPadding * 2,
-            ))
+            )
+            // Container(
+            //   alignment: Alignment.center,
+            //   color: AppColors.primary,
+            //   width: 2,
+            //   height: hasPickupDropLabel == true
+            //       ? Dimens.kDefaultPadding * 3
+            //       : Dimens.kDefaultPadding * 2,
+            // )
+            )
       ],
     );
   }
 
   /// This is the Custom Floating Button for all the allride applications
 
-  static Widget floatingButton(
-      {required VoidCallback onPressed,
-      required String iconPath,
-      double? width,
-      double? height}) {
-    return GestureDetector(
-      onTap: onPressed,
-      child: Container(
-        width: 56,
-        height: 56,
-        decoration: const BoxDecoration(
-            shape: BoxShape.circle, color: AppColors.primary),
-        child: Align(
-          alignment: Alignment.center,
-          child: SvgPicture.asset(
-            iconPath,
-            width: width ?? 25,
-            height: height ?? 25,
-          ),
-        ),
-      ),
-    );
-  }
+  // static Widget floatingButton({
+  //   required VoidCallback onPressed,
+  //   required String iconPath,
+  //   double? width,
+  //   double? height,
+  //   Color? iconColor,
+  // }) {
+  //   return GestureDetector(
+  //     onTap: onPressed,
+  //     child: Container(
+  //       width: 56,
+  //       height: 56,
+  //       decoration: const BoxDecoration(
+  //           shape: BoxShape.circle, color: AppColors.primary),
+  //       child: Align(
+  //         alignment: Alignment.center,
+  //         child: SvgPicture.asset(
+  //           iconPath,
+  //           color: iconColor ?? AppColors.black,
+  //           width: width ?? 25,
+  //           height: height ?? 25,
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
   static Widget dragHandleForBottomSheet({required BuildContext context}) {
     return Align(
@@ -1521,87 +1585,15 @@ class AppComponent {
     );
   }
 
-  /// This is the Have a Query Card for all the allride applications
-
-  // static Widget haveAQueryCard(
-  //     {required BuildContext context, required VoidCallback onTap}) {
-  //   return GestureDetector(
-  //     onTap: onTap,
-  //     child: Container(
-  //       padding: const EdgeInsets.all(Dimens.kDefaultPadding),
-  //       decoration: BoxDecoration(
-  //           color: AppColors.lightGrey,
-  //           borderRadius: BorderRadius.circular(Dimens.cardCornerRadius)),
-  //       child: Row(
-  //         crossAxisAlignment: CrossAxisAlignment.start,
-  //         children: [
-  //           SvgPicture.asset(
-  //             '${AppConstants.packagePath}${AppImages.chatQuery}',
-  //             width: 70,
-  //           ),
-  //           const SizedBox(
-  //             width: Dimens.kDefaultPadding,
-  //           ),
-  //           Expanded(
-  //             child: Column(
-  //               crossAxisAlignment: CrossAxisAlignment.start,
-  //               children: [
-  //                 Text(
-  //                   'Have a query?',
-  //                   textScaleFactor: 0.98,
-  //                   style: Theme.of(context)
-  //                       .textTheme
-  //                       .headline5!
-  //                       .copyWith(fontWeight: FontWeight.w700),
-  //                 ),
-  //                 const SizedBox(
-  //                   height: Dimens.kDefaultPadding / 4,
-  //                 ),
-  //                 Text('Chat with us',
-  //                     textScaleFactor: 0.98,
-  //                     style: Theme.of(context)
-  //                         .textTheme
-  //                         .bodyText1!
-  //                         .copyWith(fontWeight: FontWeight.w400)),
-  //               ],
-  //             ),
-  //           ),
-  //           const SizedBox(
-  //             width: Dimens.kDefaultPadding,
-  //           ),
-  //           Container(
-  //             width: 50,
-  //             height: 50,
-  //             decoration: BoxDecoration(
-  //                 shape: BoxShape.circle,
-  //                 color: AppColors.white,
-  //                 boxShadow: [
-  //                   BoxShadow(
-  //                       offset: const Offset(0, 5),
-  //                       blurRadius: 5,
-  //                       spreadRadius: 3,
-  //                       color: AppColors.grey.withAlpha(30))
-  //                 ]),
-  //             child: const Icon(
-  //               EvaIcons.arrowForward,
-  //               color: AppColors.black,
-  //               size: Dimens.appBarIconSize * 1.2,
-  //             ),
-  //           )
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  // }
-
   /// This widget is empty widget for list data
 
   static Widget emptyWidget({
     required BuildContext context,
     required String labelText,
     required String iconPath,
-    required String buttonLabel,
-    required VoidCallback onPressed,
+    String? buttonLabel,
+    bool? hasButton = false,
+    VoidCallback? onPressed,
   }) {
     return Align(
       alignment: Alignment.center,
@@ -1616,18 +1608,30 @@ class AppComponent {
             padding: const EdgeInsets.all(Dimens.kDefaultPadding),
             decoration: const BoxDecoration(
                 shape: BoxShape.circle, color: AppColors.lightGrey),
-            child: SvgPicture.asset(iconPath),
+            child: SvgPicture.asset(
+              iconPath,
+              fit: BoxFit.cover,
+              width: Dimens.appBarIconSize,
+              height: Dimens.appBarIconSize,
+            ),
           ),
           const SizedBox(
             height: Dimens.kDefaultPadding,
           ),
-          AppComponent.labelText(context: context, text: labelText),
+          AppComponent.labelText(
+              context: context, text: labelText, maxLines: 2, isCenter: true),
           const SizedBox(
-            height: Dimens.kDefaultPadding * 3,
+            height: Dimens.kDefaultPadding * 2,
           ),
-          SizedBox(
-              width: MediaQuery.of(context).size.width * 0.55,
-              child: PrimaryButton(label: buttonLabel, onPressed: onPressed))
+          Visibility(
+            visible: hasButton!,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: Dimens.kDefaultPadding),
+              child: PrimaryButton(
+                  label: buttonLabel ?? '', onPressed: onPressed ?? () {}),
+            ),
+          )
         ],
       ),
     );
@@ -1690,5 +1694,168 @@ class AppComponent {
         // width: MediaQuery.of(context).size.width * 0.25,
         height: Dimens.buttonHeight,
         fit: BoxFit.contain);
+  }
+
+  /// camera & gallery picker bottom sheet
+  static void showCameraGalleryPickerBottomSheet({
+    required BuildContext context,
+    required Future<void> onCameraTap,
+    required Future<void> onGalleryTap,
+  }) {
+    showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(Dimens.cardCornerRadius),
+              topLeft: Radius.circular(Dimens.cardCornerRadius)),
+        ),
+        context: context,
+        builder: (builder) {
+          return Container(
+              padding: const EdgeInsets.all(Dimens.kDefaultPadding),
+              //height: MediaQuery.of(context).size.width * 0.35,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: Dimens.kDefaultPadding,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: () => onCameraTap,
+                            child: CircleAvatar(
+                                backgroundColor: AppColors.grey.withAlpha(50),
+                                radius: Dimens.kDefaultPadding * 2,
+                                child: const Icon(
+                                  Icons.photo_camera_rounded,
+                                  size: Dimens.kDefaultPadding * 2,
+                                  color: AppColors.black,
+                                )),
+                          ),
+                          const SizedBox(
+                            height: Dimens.kDefaultPadding / 2,
+                          ),
+                          AppComponent.labelText(
+                              context: context, text: "Camera")
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: () => onGalleryTap,
+                            child: CircleAvatar(
+                                backgroundColor: AppColors.grey.withAlpha(50),
+                                radius: Dimens.kDefaultPadding * 2,
+                                child: const Icon(
+                                  Icons.photo_rounded,
+                                  size: Dimens.kDefaultPadding * 2,
+                                  color: AppColors.black,
+                                )),
+                          ),
+                          const SizedBox(
+                            height: Dimens.kDefaultPadding / 2,
+                          ),
+                          AppComponent.labelText(
+                              context: context, text: "Gallery")
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ));
+        });
+  }
+
+  /// App Close alert
+  static Future<bool> appCloseAlert(BuildContext context) async {
+    return await showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            insetPadding: const EdgeInsets.all(Dimens.kDefaultPadding * 1.3),
+            contentPadding: const EdgeInsets.all(Dimens.kDefaultPadding),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(Dimens.cardCornerRadius),
+            ),
+            content: Container(
+              margin: const EdgeInsets.all(Dimens.kDefaultPadding),
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  AppComponent.titleText(
+                      context: context, text: 'exit_application'),
+                  const SizedBox(
+                    height: Dimens.kDefaultPadding,
+                  ),
+                  AppComponent.labelText(
+                      context: context,
+                      maxLines: 3,
+                      fontWeight: FontWeight.w400,
+                      textColor: AppColors.subTitleText,
+                      text: 'exit_application_subtitle'),
+                  const SizedBox(
+                    height: Dimens.kDefaultPadding,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: Dimens.kDefaultPadding),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  elevation: 0,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          Dimens.cardCornerRadius)),
+                                  backgroundColor: AppColors.primary,
+                                  minimumSize: const Size.fromHeight(
+                                      Dimens.largeButtonHeight)),
+                              onPressed: () {
+                                Navigator.of(context).pop(true);
+                              },
+                              child: const Text(
+                                'yes',
+                                textScaleFactor: 0.98,
+                              ).tr()),
+                        ),
+                        const SizedBox(
+                          width: Dimens.kDefaultPadding * 1.5,
+                        ),
+                        Expanded(
+                          child: OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                  elevation: 0,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          Dimens.cardCornerRadius)),
+                                  side: const BorderSide(
+                                      width: 1, color: AppColors.black),
+                                  backgroundColor: AppColors.white,
+                                  minimumSize: const Size.fromHeight(
+                                      Dimens.largeButtonHeight)),
+                              onPressed: () {
+                                Navigator.of(context).pop(false);
+                              },
+                              child: const Text(
+                                'no',
+                                textScaleFactor: 0.98,
+                              ).tr()),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        });
   }
 }
