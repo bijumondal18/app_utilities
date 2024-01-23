@@ -34,6 +34,7 @@ export 'package:app_utilities/src/widgets/outlined_button.dart';
 export 'package:app_utilities/src/widgets/custom_card.dart';
 export 'package:app_utilities/src/widgets/custom_bottom_sheet.dart';
 export 'package:app_utilities/src/widgets/phone_text_field.dart';
+export 'package:app_utilities/src/widgets/have_a_query_card_widget.dart';
 
 /// Localisation Library
 export 'package:app_utilities/src/localizations/app_localizations.dart';
