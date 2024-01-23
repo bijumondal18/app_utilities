@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:intl/intl.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AppHelper {
   /// This function is for convert string to date
@@ -16,7 +17,7 @@ class AppHelper {
   /// This function is for convert string to time
   static String getTimeFromString(String givenTime) {
     var inputDate = DateTime.parse(givenTime);
-    var outputFormat = DateFormat('hh:mm a');
+    var outputFormat = DateFormat('h:mm a');
     var outputDate = outputFormat.format(inputDate);
     return outputDate;
   }
@@ -79,6 +80,15 @@ class AppHelper {
     return deviceName.toString();
   }
 
-  ///
+  /// This function is responsible for Call a particular phone number
+  static Future<void> makePhoneCall(String phoneNumber) async {
+    Uri url = Uri(scheme: "tel", path: phoneNumber);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw "Unable to make call to this number";
+    }
+  }
 
+  ///
 }
