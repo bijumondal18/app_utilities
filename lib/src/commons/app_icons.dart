@@ -22,6 +22,7 @@ class AppIcons {
   static const String car = '${path}car-icon.svg';
   static const String card = '${path}card-icon.svg';
   static const String email = '${path}email-icon.svg';
+  static const String gallery = '${path}gallery-icon.svg';
   static const String creditCard = '${path}credit-card-icon.svg';
   static const String creditCardEclipse = '${path}credit-card-eclipse-icon.svg';
   static const String send = '${path}send-icon.svg';
@@ -34,4 +35,10 @@ class AppIcons {
   static const String mapMarker = '${path}map-marker.svg';
   static const String dropLocation = '${path}drop-location-icon.svg';
   static const String addAttachment = '${path}add-attachment-icon.svg';
+  static const String dollar = '${path}dollar-icon.svg';
+  static const String indianFlag = '${path}flag-india.svg';
+  static const String saudiArabianFlag = '${path}flag-saudi_arabia.svg';
+  static const String franceFlag = '${path}flag-france.svg';
+  static const String spanishFlag = '${path}flag-spain.svg';
+  static const String portugalFlag = '${path}flag-portugal.svg';
 }
