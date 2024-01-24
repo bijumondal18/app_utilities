@@ -1,4 +1,4 @@
-import 'package:allride_utilities/allride_utilities.dart';
+import 'package:app_utilities/app_utilities.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
