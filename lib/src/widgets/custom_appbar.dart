@@ -43,17 +43,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         automaticallyImplyLeading: autoImplyLeading!,
         actions: actions,
         elevation: elevation ?? 0,
-        titleSpacing: 0,
+        // titleSpacing: 0,
         leading: autoImplyLeading == true
             ? IconButton(
                 icon: SvgPicture.asset(
                   leadingIcon ??
                       '${AppConstants.packagePath}${AppIcons.arrowBack}',
+                  color: AppColors.white,
                 ),
                 onPressed: leadingIconPressed ?? () => Navigator.pop(context),
               )
-            : const SizedBox(),
-        leadingWidth: autoImplyLeading == true ? 20 : 30,
+            : const SizedBox(width: Dimens.kDefaultPadding,),
+        // leadingWidth: autoImplyLeading == true ? 20 : 30,
         title: Text(
           title!,
           textScaleFactor: 0.98,
