@@ -20,13 +20,13 @@ class AppTheme {
       appBarTheme: AppBarTheme(
           iconTheme: const IconThemeData(
             size: Dimens.appBarIconSize,
-            color: AppColors.black,
+            color: AppColors.white,
           ),
-          backgroundColor: AppColors.white,
+          backgroundColor: AppColors.primary,
           elevation: 0,
           centerTitle: false,
           titleTextStyle: TextStyle(
-            color: AppColors.black,
+            color: AppColors.white,
             fontSize: Dimens.bodyText1,
             fontWeight: FontWeight.w500,
             fontFamily: FontFamily.sourceSansProRegular,
