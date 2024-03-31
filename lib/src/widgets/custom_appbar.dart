@@ -51,6 +51,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       '${AppConstants.packagePath}${AppIcons.arrowBack}',
                   color: AppColors.white,
                 ),
+                color: AppColors.white,
                 onPressed: leadingIconPressed ?? () => Navigator.pop(context),
               )
             : const SizedBox(width: Dimens.kDefaultPadding,),
