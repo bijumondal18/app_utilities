@@ -49,7 +49,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 icon: SvgPicture.asset(
                   leadingIcon ??
                       '${AppConstants.packagePath}${AppIcons.arrowBack}',
-                  color: AppColors.black,
                 ),
                 onPressed: leadingIconPressed ?? () => Navigator.pop(context),
               )
