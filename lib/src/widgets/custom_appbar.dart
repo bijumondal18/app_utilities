@@ -11,6 +11,8 @@ import '../../app_utilities.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
+  final String? subTitle;
+  final bool? hasSubTitle;
   final List<Widget>? actions;
   final bool? autoImplyLeading;
   final String? leadingIcon;
@@ -18,6 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool hasTabBar;
   final double? elevation;
   final VoidCallback? leadingIconPressed;
+  final Color? backgroundColor;
 
   const CustomAppBar({
     Key? key,
@@ -29,48 +32,65 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.hasTabBar = false,
     this.elevation,
     this.leadingIconPressed,
+    this.backgroundColor = AppColors.white,
+    this.subTitle,
+    this.hasSubTitle = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return
-        //Column(
-        // children: [
-        //Expanded(
-        //  child:
-        Material(
-      child: AppBar(
-        automaticallyImplyLeading: autoImplyLeading!,
-        actions: actions,
-        elevation: elevation ?? 0,
-        // titleSpacing: 0,
-        leading: autoImplyLeading == true
-            ? IconButton(
-                icon: SvgPicture.asset(
-                  leadingIcon ??
-                      '${AppConstants.packagePath}${AppIcons.arrowBack}',
-                ),
-                color: AppColors.white,
-                onPressed: leadingIconPressed ?? () => Navigator.pop(context),
-              )
-            : const SizedBox(width: Dimens.kDefaultPadding,),
-        // leadingWidth: autoImplyLeading == true ? 20 : 30,
-        title: Text(
-          title!,
-          textScaleFactor: 0.98,
-          style: Theme.of(context)
-              .textTheme
-              .headline5!
-              .copyWith(color: AppColors.black),
+    return Column(
+      children: [
+        Expanded(
+          child: AppBar(
+            automaticallyImplyLeading: autoImplyLeading!,
+            actions: actions,
+            elevation: elevation ?? 0,
+            titleSpacing:
+                autoImplyLeading == false ? Dimens.kDefaultPadding : 0.0,
+            backgroundColor: backgroundColor,
+            leading: autoImplyLeading == true
+                ? IconButton(
+                    icon: SvgPicture.asset(
+                      leadingIcon ??
+                          '${AppConstants.packagePath}${AppIcons.arrowBack}',
+                    ),
+                    color: AppColors.black,
+                    onPressed:
+                        leadingIconPressed ?? () => Navigator.pop(context),
+                  )
+                : const SizedBox(
+                    width: Dimens.kDefaultPadding,
+                  ),
+            // leadingWidth: autoImplyLeading == true ? 20 : 30,
+            title: hasSubTitle == true
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AppComponent.titleText(
+                        context: context,
+                        text: title!,
+                      ),
+                      const SizedBox(
+                        height: 4.0,
+                      ),
+                      AppComponent.captionText(
+                        context: context,
+                        text: subTitle ?? '',
+                      ),
+                    ],
+                  )
+                : AppComponent.titleText(
+                    context: context,
+                    text: title!,
+                  ),
+            bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(kTextTabBarHeight),
+                child: bottom ?? const SizedBox()),
+          ),
         ),
-        bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(kTextTabBarHeight),
-            child: bottom ?? const SizedBox()),
-        // ),
-        // ),
-        //AppComponent.divider()
-        // ],
-      ),
+        AppComponent.divider()
+      ],
     );
   }
 
