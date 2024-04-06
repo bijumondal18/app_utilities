@@ -3,11 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../app_utilities.dart';
-import '../../app_utilities.dart';
-
-/*
-  This is the AppBar for all the allride applications
-  */
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
@@ -40,6 +35,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Expanded(
           child: AppBar(
@@ -66,6 +62,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             title: hasSubTitle == true
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       AppComponent.titleText(
                         context: context,
