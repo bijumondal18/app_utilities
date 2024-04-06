@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
-      useMaterial3: false,
+      useMaterial3: true,
       primarySwatch: AppColors.generateMaterialColor(AppColors.primary),
       dividerColor: AppColors.grey,
       brightness: Brightness.light,
@@ -20,18 +20,18 @@ class AppTheme {
       appBarTheme: AppBarTheme(
           iconTheme: const IconThemeData(
             size: Dimens.appBarIconSize,
-            color: AppColors.white,
+            color: AppColors.black,
           ),
-          backgroundColor: AppColors.primary,
+          backgroundColor: AppColors.white,
           elevation: 0,
           centerTitle: false,
           titleTextStyle: TextStyle(
-            color: AppColors.white,
+            color: AppColors.black,
             fontSize: Dimens.bodyText1,
             fontWeight: FontWeight.w500,
             fontFamily: FontFamily.sourceSansProRegular,
           ),
-          foregroundColor: AppColors.white),
+          foregroundColor: AppColors.black),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
           color: AppColors.lightGrey, circularTrackColor: AppColors.lightGrey),
       checkboxTheme: CheckboxThemeData(
