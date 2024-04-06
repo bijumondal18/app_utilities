@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
-      useMaterial3: true,
+      useMaterial3: false,
       primarySwatch: AppColors.generateMaterialColor(AppColors.primary),
       dividerColor: AppColors.grey,
       brightness: Brightness.light,
