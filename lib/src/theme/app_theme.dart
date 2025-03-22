@@ -106,6 +106,9 @@ class AppTheme {
   }
 
   static ThemeData get darkTheme {
-    return ThemeData();
+    return ThemeData(
+      useMaterial3: true,
+      primarySwatch: AppColors.generateMaterialColor(AppColors.primary),
+    );
   }
 }
