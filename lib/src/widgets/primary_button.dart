@@ -97,11 +97,11 @@ class _PrimaryButtonState extends State<PrimaryButton>
                           textScaleFactor: 0.98,
                           style: Theme.of(context)
                               .textTheme
-                              .headline6!
+                              .titleSmall!
                               .copyWith(
                                   color: widget.labelColor ??
                                       AppColors.white,
-                                  fontSize: widget.fontSize ?? Dimens.headline6,
+                                  fontSize: widget.fontSize ?? Dimens.titleSmall,
                                   fontWeight:
                                       widget.fontWeight ?? FontWeight.w500),
                         ),
@@ -122,9 +122,9 @@ class _PrimaryButtonState extends State<PrimaryButton>
                     child: Text(
                       widget.label,
                       textScaleFactor: 0.98,
-                      style: Theme.of(context).textTheme.headline6!.copyWith(
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
                           color: widget.labelColor ?? AppColors.white,
-                          fontSize: widget.fontSize ?? Dimens.headline6,
+                          fontSize: widget.fontSize ?? Dimens.titleSmall,
                           fontWeight: widget.fontWeight ?? FontWeight.w500),
                     ),
                   ),

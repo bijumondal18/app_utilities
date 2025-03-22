@@ -103,10 +103,10 @@ class _OutlineButtonState extends State<OutlineButton>
                           textScaleFactor: 0.98,
                           style: Theme.of(context)
                               .textTheme
-                              .headline6!
+                              .titleSmall!
                               .copyWith(
                                   color: widget.labelColor ?? AppColors.black,
-                                  fontSize: widget.fontSize ?? Dimens.headline6,
+                                  fontSize: widget.fontSize ?? Dimens.titleSmall,
                                   fontWeight:
                                       widget.fontWeight ?? FontWeight.w500),
                         ),
@@ -144,12 +144,12 @@ class _OutlineButtonState extends State<OutlineButton>
                               textScaleFactor: 0.98,
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline6!
+                                  .titleSmall!
                                   .copyWith(
                                       color:
                                           widget.labelColor ?? AppColors.black,
                                       fontSize:
-                                          widget.fontSize ?? Dimens.headline6,
+                                          widget.fontSize ?? Dimens.titleSmall,
                                       fontWeight:
                                           widget.fontWeight ?? FontWeight.w500),
                             ),
@@ -179,12 +179,12 @@ class _OutlineButtonState extends State<OutlineButton>
                                   textScaleFactor: 0.98,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline6!
+                                      .titleSmall!
                                       .copyWith(
                                           color: widget.labelColor ??
                                               AppColors.black,
                                           fontSize: widget.fontSize ??
-                                              Dimens.headline6,
+                                              Dimens.titleSmall,
                                           fontWeight: widget.fontWeight ??
                                               FontWeight.w500),
                                 ),
@@ -209,12 +209,12 @@ class _OutlineButtonState extends State<OutlineButton>
                               textScaleFactor: 0.98,
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline6!
+                                  .titleSmall!
                                   .copyWith(
                                       color:
                                           widget.labelColor ?? AppColors.black,
                                       fontSize:
-                                          widget.fontSize ?? Dimens.headline6,
+                                          widget.fontSize ?? Dimens.titleSmall,
                                       fontWeight:
                                           widget.fontWeight ?? FontWeight.w500),
                             ),

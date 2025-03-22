@@ -29,7 +29,7 @@ class AppComponent {
       textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
       overflow: TextOverflow.ellipsis,
       textScaleFactor: 0.98,
-      style: Theme.of(context).textTheme.headline1!.copyWith(
+      style: Theme.of(context).textTheme.headlineLarge!.copyWith(
             fontSize: fontSize,
             color: textColor,
             fontWeight: fontWeight ?? FontWeight.w500,
@@ -54,7 +54,7 @@ class AppComponent {
       textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
       overflow: TextOverflow.ellipsis,
       textScaleFactor: 0.98,
-      style: Theme.of(context).textTheme.headline5!.copyWith(
+      style: Theme.of(context).textTheme.titleMedium!.copyWith(
           fontSize: fontSize,
           color: textColor,
           fontWeight: fontWeight ?? FontWeight.w500),
@@ -78,7 +78,7 @@ class AppComponent {
       textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
       overflow: TextOverflow.ellipsis,
       textScaleFactor: 0.98,
-      style: Theme.of(context).textTheme.headline6!.copyWith(
+      style: Theme.of(context).textTheme.titleSmall!.copyWith(
           fontSize: fontSize,
           color: textColor,
           fontWeight: fontWeight ?? FontWeight.w500),
@@ -102,7 +102,7 @@ class AppComponent {
       textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
       overflow: TextOverflow.ellipsis,
       textScaleFactor: 0.98,
-      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
           fontSize: fontSize,
           color: textColor ?? AppColors.subTitleText,
           fontWeight: fontWeight ?? FontWeight.w500),
@@ -126,7 +126,7 @@ class AppComponent {
       textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
       overflow: TextOverflow.ellipsis,
       textScaleFactor: 0.98,
-      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
           fontSize: fontSize,
           color: textColor,
           fontWeight: fontWeight ?? FontWeight.w500),
@@ -150,7 +150,7 @@ class AppComponent {
       textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
       overflow: TextOverflow.ellipsis,
       textScaleFactor: 0.98,
-      style: Theme.of(context).textTheme.button!.copyWith(
+      style: Theme.of(context).textTheme.labelLarge!.copyWith(
           fontSize: fontSize,
           color: textColor,
           fontWeight: fontWeight ?? FontWeight.w500),
@@ -174,7 +174,7 @@ class AppComponent {
       textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
       overflow: TextOverflow.ellipsis,
       textScaleFactor: 0.98,
-      style: Theme.of(context).textTheme.caption!.copyWith(
+      style: Theme.of(context).textTheme.bodySmall!.copyWith(
           fontSize: fontSize,
           color: textColor,
           fontWeight: fontWeight ?? FontWeight.w500),
@@ -269,7 +269,7 @@ class AppComponent {
                     child: Text(
                       label,
                       textScaleFactor: 0.98,
-                      style: Theme.of(context).textTheme.button!.copyWith(
+                      style: Theme.of(context).textTheme.labelLarge!.copyWith(
                           color: labelColor ?? AppColors.black,
                           fontWeight: fontWeight ?? FontWeight.w600),
                     ),
@@ -286,7 +286,7 @@ class AppComponent {
                 textScaleFactor: 0.98,
                 style: Theme.of(context)
                     .textTheme
-                    .button!
+                    .labelLarge!
                     .copyWith(color: labelColor ?? AppColors.black),
               ) //tr() is for make this text multi lingual
         );
@@ -367,9 +367,9 @@ class AppComponent {
         child: Text(
           label,
           textScaleFactor: 0.98,
-          style: Theme.of(context).textTheme.button!.copyWith(
+          style: Theme.of(context).textTheme.labelLarge!.copyWith(
               color: labelColor ?? AppColors.primary,
-              fontSize: fontSize ?? Dimens.button,
+              fontSize: fontSize ?? Dimens.labelLarge,
               fontWeight: fontWeight ?? FontWeight.w500),
         ) //tr() is for make this text multi lingual
         );
@@ -402,10 +402,10 @@ class AppComponent {
               child: Text(
                 label,
                 textScaleFactor: 0.98,
-                style: Theme.of(context).textTheme.button!.copyWith(
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
                       color: labelColor ?? AppColors.primary,
                       fontWeight: fontWeight ?? FontWeight.w500,
-                      fontSize: fontSize ?? Dimens.button,
+                      fontSize: fontSize ?? Dimens.labelLarge,
                     ),
               ) //tr() is for make this text multi lingual
               ),
@@ -448,7 +448,7 @@ class AppComponent {
                 textScaleFactor: 0.98,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontWeight: FontWeight.w400),
               ) //tr() is for make this text multi lingual
             : const SizedBox.shrink(),
@@ -506,12 +506,12 @@ class AppComponent {
                   filled: true,
                   fillColor: AppColors.lightGrey,
                   hintText: hintText,
-                  hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
+                  hintStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       color: AppColors.grey, fontWeight: FontWeight.w400),
-                  labelStyle: Theme.of(context).textTheme.bodyText1,
+                  labelStyle: Theme.of(context).textTheme.bodyLarge,
                   errorStyle: Theme.of(context)
                       .textTheme
-                      .bodyText2!
+                      .bodyMedium!
                       .copyWith(color: AppColors.red),
                   errorText: controller.text == "" ? errorText : null)
               : (isUnderline == true && isBorder == false)
@@ -537,12 +537,12 @@ class AppComponent {
                           borderSide:
                               BorderSide(width: 1, color: AppColors.border)),
                       hintText: hintText,
-                      hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      hintStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           color: AppColors.grey, fontWeight: FontWeight.w400),
-                      labelStyle: Theme.of(context).textTheme.bodyText1,
+                      labelStyle: Theme.of(context).textTheme.bodyLarge,
                       errorStyle: Theme.of(context)
                           .textTheme
-                          .bodyText2!
+                          .bodyMedium!
                           .copyWith(color: AppColors.red),
                       errorText: controller.text == "" ? errorText : null)
                   : InputDecoration(
@@ -565,12 +565,12 @@ class AppComponent {
                       hintText: hintText,
                       hintStyle: Theme.of(context)
                           .textTheme
-                          .bodyText1!
+                          .bodyLarge!
                           .copyWith(
                               color: AppColors.grey,
                               fontWeight: FontWeight.w400),
-                      labelStyle: Theme.of(context).textTheme.bodyText1,
-                      errorStyle: Theme.of(context).textTheme.bodyText2!.copyWith(color: AppColors.red),
+                      labelStyle: Theme.of(context).textTheme.bodyLarge,
+                      errorStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(color: AppColors.red),
                       errorText: controller.text == "" ? errorText : null),
         ),
       ],
@@ -599,7 +599,7 @@ class AppComponent {
           textScaleFactor: 0.98,
           style: Theme.of(context)
               .textTheme
-              .bodyText1!
+              .bodyLarge!
               .copyWith(fontWeight: FontWeight.w400),
         ) //tr() is for make this text multi lingual
             : const SizedBox(),
@@ -643,12 +643,12 @@ class AppComponent {
               ),
               hintStyle: Theme.of(context)
                   .textTheme
-                  .bodyText1!
+                  .bodyLarge!
                   .copyWith(color: AppColors.grey, fontWeight: FontWeight.w400),
-              labelStyle: Theme.of(context).textTheme.bodyText1,
+              labelStyle: Theme.of(context).textTheme.bodyLarge,
               errorStyle: Theme.of(context)
                   .textTheme
-                  .bodyText2!
+                  .bodyMedium!
                   .copyWith(color: AppColors.red),
               errorText: value.toString() == "" ? errorText : null),
         ),
@@ -695,9 +695,9 @@ class AppComponent {
               hintText: hintText,
               hintStyle: Theme.of(context)
                   .textTheme
-                  .bodyText1!
+                  .bodyLarge!
                   .copyWith(color: AppColors.grey, fontWeight: FontWeight.w400),
-              labelStyle: Theme.of(context).textTheme.bodyText1,
+              labelStyle: Theme.of(context).textTheme.bodyLarge,
             ),
           )),
           GestureDetector(
@@ -884,7 +884,7 @@ class AppComponent {
               borderRadius: BorderRadius.circular(Dimens.cardCornerRadius / 2)),
           child: Text(
             status,
-            style: Theme.of(context).textTheme.bodyText2!.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 color: textColor ?? AppColors.white,
                 fontWeight: FontWeight.w500),
           ),
@@ -912,7 +912,7 @@ class AppComponent {
             textScaleFactor: 0.98,
             style: Theme.of(context)
                 .textTheme
-                .bodyText1!
+                .bodyLarge!
                 .copyWith(color: foregroundColor ?? AppColors.white),
           ),
         ),
@@ -956,7 +956,7 @@ class AppComponent {
               textScaleFactor: 0.98,
               style: Theme.of(context)
                   .textTheme
-                  .headline4!
+                  .titleLarge!
                   .copyWith(fontWeight: FontWeight.w500),
             ),
             subTitle != ''
@@ -971,7 +971,7 @@ class AppComponent {
                     textScaleFactor: 0.98,
                     style: Theme.of(context)
                         .textTheme
-                        .bodyText1!
+                        .bodyLarge!
                         .copyWith(color: AppColors.subTitleText),
                   )
                 : const SizedBox(),
@@ -1036,7 +1036,7 @@ class AppComponent {
               title ?? '',
               textAlign: TextAlign.center,
               textScaleFactor: 0.98,
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             subTitle != ''
                 ? const SizedBox(
@@ -1048,7 +1048,7 @@ class AppComponent {
                     subTitle ?? '',
                     textAlign: TextAlign.center,
                     textScaleFactor: 0.98,
-                    style: Theme.of(context).textTheme.bodyText1,
+                    style: Theme.of(context).textTheme.bodyLarge,
                   )
                 : const SizedBox(),
             // const SizedBox(
@@ -1140,7 +1140,7 @@ class AppComponent {
                 label,
                 textScaleFactor: 0.98,
                 maxLines: 2,
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             )
           ],
@@ -1193,7 +1193,7 @@ class AppComponent {
                 label,
                 textScaleFactor: 0.98,
                 maxLines: 2,
-                style: Theme.of(context).textTheme.headline6!.copyWith(),
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(),
               ),
             ),
             const SizedBox(
@@ -1241,7 +1241,7 @@ class AppComponent {
           textScaleFactor: 0.98,
           textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
           overflow: TextOverflow.ellipsis,
-          style: Theme.of(context).textTheme.bodyText1!.copyWith(
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
               fontSize: fontSize,
               color: textColor,
               fontWeight: fontWeight ?? FontWeight.w500),
@@ -1276,7 +1276,7 @@ class AppComponent {
               text,
               textAlign: TextAlign.start,
               textScaleFactor: 0.98,
-              style: Theme.of(context).textTheme.bodyText1!.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   color: AppColors.white, fontWeight: FontWeight.w500),
             ),
             const SizedBox(
@@ -1286,7 +1286,7 @@ class AppComponent {
               '$senderName | $sentTime',
               textAlign: TextAlign.start,
               textScaleFactor: 0.98,
-              style: Theme.of(context).textTheme.caption!.copyWith(
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
                   color: AppColors.white, fontWeight: FontWeight.w400),
             ),
           ],
@@ -1320,7 +1320,7 @@ class AppComponent {
               text,
               textAlign: TextAlign.start,
               textScaleFactor: 0.98,
-              style: Theme.of(context).textTheme.bodyText1!.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   color: AppColors.black, fontWeight: FontWeight.w500),
             ),
             const SizedBox(
@@ -1330,7 +1330,7 @@ class AppComponent {
               '$senderName | $sentTime',
               textAlign: TextAlign.start,
               textScaleFactor: 0.98,
-              style: Theme.of(context).textTheme.caption!.copyWith(
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
                   color: AppColors.black, fontWeight: FontWeight.w400),
             ),
           ],
@@ -1379,7 +1379,7 @@ class AppComponent {
                                   'Pickup'.toUpperCase(),
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText2!
+                                  .bodyMedium!
                                   .copyWith(color: AppColors.grey),
                             )
                           : const SizedBox(),
@@ -1388,7 +1388,7 @@ class AppComponent {
                         textScaleFactor: 0.98,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontWeight: FontWeight.w500,
                             color: locationColor ?? AppColors.black),
                       ),
@@ -1404,7 +1404,7 @@ class AppComponent {
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context)
                         .textTheme
-                        .bodyText1!
+                        .bodyLarge!
                         .copyWith(fontWeight: FontWeight.w400)),
               ],
             ),
@@ -1433,7 +1433,7 @@ class AppComponent {
                               dropLabel?.toUpperCase() ?? 'Drop'.toUpperCase(),
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText2!
+                                  .bodyMedium!
                                   .copyWith(color: AppColors.grey),
                             )
                           : const SizedBox(),
@@ -1442,7 +1442,7 @@ class AppComponent {
                         textScaleFactor: 0.98,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontWeight: FontWeight.w500,
                             color: locationColor ?? AppColors.black),
                       ),
@@ -1458,7 +1458,7 @@ class AppComponent {
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context)
                         .textTheme
-                        .bodyText1!
+                        .bodyLarge!
                         .copyWith(fontWeight: FontWeight.w400)),
               ],
             ),
@@ -1674,7 +1674,7 @@ class AppComponent {
                   label: 'Apply',
                   cornerRadius: Dimens.cardCornerRadius / 2,
                   padding: const EdgeInsets.all(Dimens.kDefaultPadding / 2),
-                  fontSize: Dimens.bodyText1))
+                  fontSize: Dimens.bodyLarge))
         ],
       ),
     );

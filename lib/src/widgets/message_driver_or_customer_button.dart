@@ -101,9 +101,9 @@ class _MessageDriverOrCustomerButtonState
                 Expanded(
                   child: Text(
                     widget.label,
-                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
                         color: widget.labelColor ?? AppColors.subTitleText,
-                        fontSize: widget.fontSize ?? Dimens.headline6,
+                        fontSize: widget.fontSize ?? Dimens.titleSmall,
                         fontWeight: widget.fontWeight ?? FontWeight.w500),
                   ),
                 ),

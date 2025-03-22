@@ -32,7 +32,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
           textScaleFactor: 0.98,
           style: Theme.of(context)
               .textTheme
-              .bodyText1!
+              .bodyLarge!
               .copyWith(fontWeight: FontWeight.w400),
         ) //tr() is for make this text multi lingual
             : const SizedBox(),
@@ -80,11 +80,11 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
                                 fillColor: AppColors.lightGrey,
                                 hintStyle: Theme.of(context)
                                     .textTheme
-                                    .bodyText1!
+                                    .bodyLarge!
                                     .copyWith(
                                         color: AppColors.grey,
                                         fontWeight: FontWeight.w400),
-                                labelStyle: Theme.of(context).textTheme.bodyText1,
+                                labelStyle: Theme.of(context).textTheme.bodyLarge,
                                 contentPadding: const EdgeInsets.symmetric(
                                     horizontal: Dimens.kDefaultPadding,
                                     vertical: Dimens.kDefaultPadding * 1.3),

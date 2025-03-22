@@ -1,22 +1,20 @@
-
 import 'package:app_utilities/app_utilities.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
-      useMaterial3: false,
+      useMaterial3: true,
       primarySwatch: AppColors.generateMaterialColor(AppColors.primary),
       dividerColor: AppColors.grey,
       brightness: Brightness.light,
-      backgroundColor: AppColors.white,
       cardColor: AppColors.white,
       primaryColor: AppColors.primary,
       hintColor: AppColors.darkGrey,
       listTileTheme: const ListTileThemeData(horizontalTitleGap: 0),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          elevation: Dimens.elevation5, backgroundColor: AppColors.primary),
+          elevation: Dimens.elevationSmall, backgroundColor: AppColors.primary),
       appBarTheme: AppBarTheme(
           iconTheme: const IconThemeData(
             size: Dimens.appBarIconSize,
@@ -25,11 +23,10 @@ class AppTheme {
           backgroundColor: AppColors.white,
           elevation: 0,
           centerTitle: false,
-          titleTextStyle: TextStyle(
+          titleTextStyle: GoogleFonts.lato(
             color: AppColors.black,
-            fontSize: Dimens.bodyText1,
+            fontSize: Dimens.bodyLarge,
             fontWeight: FontWeight.w500,
-            fontFamily: FontFamily.sourceSansProRegular,
           ),
           foregroundColor: AppColors.black),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
@@ -42,10 +39,10 @@ class AppTheme {
       visualDensity: VisualDensity.adaptivePlatformDensity,
       tabBarTheme: const TabBarTheme(
         labelStyle:
-            TextStyle(fontWeight: FontWeight.w600, fontSize: Dimens.headline6),
+            TextStyle(fontWeight: FontWeight.w600, fontSize: Dimens.titleSmall),
         labelColor: AppColors.black,
         unselectedLabelStyle:
-            TextStyle(fontWeight: FontWeight.w600, fontSize: Dimens.headline6),
+            TextStyle(fontWeight: FontWeight.w600, fontSize: Dimens.titleSmall),
         indicatorSize: TabBarIndicatorSize.label,
         unselectedLabelColor: AppColors.grey,
         indicator: UnderlineTabIndicator(
@@ -55,49 +52,56 @@ class AppTheme {
             ),
             borderSide: BorderSide(color: AppColors.black, width: 3)),
       ),
-      textTheme: const TextTheme(
-        headline1: TextStyle(
+      textTheme: TextTheme(
+        headlineLarge: GoogleFonts.lato(
             color: AppColors.black,
-            fontSize: Dimens.headline1,
+            fontSize: Dimens.headlineLarge,
             fontWeight: FontWeight.w900),
-        headline2: TextStyle(
+        headlineMedium: GoogleFonts.lato(
             color: AppColors.black,
-            fontSize: Dimens.headline2,
+            fontSize: Dimens.headlineMedium,
             fontWeight: FontWeight.w700),
-        headline3: TextStyle(
+        headlineSmall: GoogleFonts.lato(
             color: AppColors.black,
-            fontSize: Dimens.headline3,
+            fontSize: Dimens.headlineSmall,
             fontWeight: FontWeight.w700),
-        headline4: TextStyle(
+        titleLarge: GoogleFonts.lato(
             color: AppColors.black,
-            fontSize: Dimens.headline4,
+            fontSize: Dimens.titleLarge,
             fontWeight: FontWeight.w600),
-        headline5: TextStyle(
+        titleMedium: GoogleFonts.lato(
             color: AppColors.black,
-            fontSize: Dimens.headline5,
+            fontSize: Dimens.titleMedium,
             fontWeight: FontWeight.w600),
-        headline6: TextStyle(
+        titleSmall: GoogleFonts.lato(
             color: AppColors.black,
-            fontSize: Dimens.headline6,
+            fontSize: Dimens.titleSmall,
             fontWeight: FontWeight.w500),
-        bodyText1: TextStyle(
+        bodyLarge: GoogleFonts.lato(
             color: AppColors.black,
-            fontSize: Dimens.bodyText1,
+            fontSize: Dimens.bodyLarge,
             fontWeight: FontWeight.w500),
-        bodyText2: TextStyle(
-            color: AppColors.darkGrey,
-            fontSize: Dimens.bodyText2,
+        bodyMedium: GoogleFonts.lato(
+            color: AppColors.black,
+            fontSize: Dimens.bodyMedium,
             fontWeight: FontWeight.w400),
-        caption: TextStyle(
+        bodySmall: GoogleFonts.lato(
             color: AppColors.darkGrey,
-            fontSize: Dimens.caption,
+            fontSize: Dimens.bodySmall,
             fontWeight: FontWeight.w400),
-        button: TextStyle(
-            color: AppColors.white,
-            fontSize: Dimens.button,
-            fontWeight: FontWeight.w600),
+        labelLarge: GoogleFonts.lato(
+            color: AppColors.black,
+            fontSize: Dimens.labelLarge,
+            fontWeight: FontWeight.w400),
+        labelMedium: GoogleFonts.lato(
+            color: AppColors.darkGrey,
+            fontSize: Dimens.labelMedium,
+            fontWeight: FontWeight.w400),
+        labelSmall: GoogleFonts.lato(
+            color: AppColors.darkGrey,
+            fontSize: Dimens.labelSmall,
+            fontWeight: FontWeight.w400),
       ),
-      fontFamily: '${AppConstants.packagePath}SourceSansPro',
     );
   }
 
