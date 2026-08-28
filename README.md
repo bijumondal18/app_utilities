@@ -1,39 +1,125 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Flutter Common Utilities
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A collection of **reusable utilities, extensions, helper classes, API utilities, interfaces, and common functions** designed to simplify Flutter application development.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This package provides a centralized set of commonly required components that can be reused across standard Flutter applications, helping reduce boilerplate code and keep projects clean, consistent, and maintainable.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+* 🧩 **Dart & Flutter Extensions**
 
-## Getting started
+  * String extensions
+  * Date & time extensions
+  * Collection/list extensions
+  * Context extensions
+  * Widget extensions
+  * Other commonly used extensions
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+* 🛠️ **Utility Classes**
+
+  * Date & time utilities
+  * String utilities
+  * Validation utilities
+  * Device utilities
+  * Storage utilities
+  * Formatting utilities
+  * Other application-level utilities
+
+* 🌐 **API Utilities**
+
+  * Common API call methods
+  * Request/response helpers
+  * API-related interfaces
+  * Network utility functions
+  * Common error-handling helpers
+
+* 🔧 **Helper Classes**
+
+  * Reusable helper functions
+  * Common application helpers
+  * Formatting helpers
+  * Validation helpers
+  * UI-related helpers
+
+* 📐 **Interfaces & Contracts**
+
+  * Reusable interfaces
+  * Common abstractions
+  * Service contracts
+  * Repository-related interfaces
+
+* ♻️ **Reusable Components**
+
+  * Reduce repetitive code
+  * Centralize commonly used functionality
+  * Improve consistency across projects
+  * Make application development faster
+
+## Getting Started
+
+Add the package to your Flutter project and use the utilities wherever required.
+
+Make sure your Flutter project is using a compatible Dart and Flutter SDK version.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the package:
 
 ```dart
-const like = 'sample';
+import 'package:flutter_common_utils/flutter_common_utils.dart';
 ```
 
-## Additional information
+You can then use the available extensions, utilities, helper classes, interfaces, and API-related functionality throughout your application.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### Example
+
+```dart
+final email = 'user@example.com';
+
+if (email.isValidEmail) {
+  print('Valid email');
+}
+```
+
+More examples and detailed usage instructions can be found in the `/example` directory.
+
+## Project Structure
+
+The package is organized around commonly required application utilities:
+
+```text
+lib/
+├── extensions/
+├── utils/
+├── helpers/
+├── interfaces/
+├── api/
+└── flutter_common_utils.dart
+```
+
+The structure may evolve as new utilities and reusable components are added.
+
+## Why Use This Package?
+
+Most Flutter applications require many of the same small utility functions and helper classes. Instead of recreating them for every project, this package provides a common and reusable foundation.
+
+It is intended to:
+
+* Reduce boilerplate
+* Improve code reuse
+* Keep utility logic centralized
+* Provide consistent implementations across applications
+* Speed up Flutter development
+* Make common functionality easier to maintain
+
+## Additional Information
+
+This package is actively developed and may grow as additional utilities and commonly required application components are added.
+
+Contributions, suggestions, bug reports, and feature requests are welcome.
+
+If you find an issue or have an idea for improving the package, please open an issue or submit a pull request.
+
+## License
+
+This package is open source and available under the terms specified in the `LICENSE` file.
